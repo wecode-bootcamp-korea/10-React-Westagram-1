@@ -4,7 +4,7 @@ import './MainRight.scss';
 class MainRight extends React.Component {
   render() {
     return (
-      <div className="main-right">
+      <div className="MainRight_KHS">
         <div className="main-right-container">
           <div className="main-right__up">
             <img

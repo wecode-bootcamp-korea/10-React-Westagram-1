@@ -1,4 +1,4 @@
-.login-box {
+.Login_KHS {
   margin: 0;
   width: 100vw;
   height: 100vh;
@@ -37,6 +37,15 @@
       width: 310px;
       height: 30px;
       background-color: #b2dffc;
+      color: white;
+      border: 1em;
+      border-radius: 3px;
+    }
+
+    .login-change-btn-color {
+      width: 310px;
+      height: 30px;
+      background-color: #0095f6;
       color: white;
       border: 1em;
       border-radius: 3px;
