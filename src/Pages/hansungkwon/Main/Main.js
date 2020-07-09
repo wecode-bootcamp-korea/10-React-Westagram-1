@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import "./Main.scss";
-import "../../../Styles/common.scss";
 import Nav from "./Components/Nav/Nav";
 import Feeds from "./Components/Feeds/Feeds";
+import "./Main.scss";
+import "../../../Styles/common.scss";
+import "../../../Styles/reset.scss";
 
 class Main extends Component {
   render() {
     return (
       <>
         <Nav />
-        <div>
-          <main>
+        <div className="Main_kwon">
+          <main className="main-contatiner">
             <Feeds />
             <div className="fix-side">
               <div className="side">

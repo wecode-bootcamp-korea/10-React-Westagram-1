@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import "./Feeds.scss";
 import "../../../../../Styles/common.scss";
+import "../../../../../Styles/reset.scss";
 
 class Feeds extends Component {
   render() {
     return (
-      <>
+      <div className="Feed_kwon">
         <article className="arc-container">
           <div className="feed-story">
             <ul>
@@ -258,7 +259,7 @@ class Feeds extends Component {
             </div>
           </div>
         </article>
-      </>
+      </div>
     );
   }
 }

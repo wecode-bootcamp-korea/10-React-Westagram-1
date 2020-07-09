@@ -1,4 +1,4 @@
-main {
+.main-contatiner {
   width: 935px;
   margin: 0 auto;
   padding-top: 84px;
@@ -49,6 +49,9 @@ main {
           }
         }
       }
+    }
+    ::-webkit-scrollbar {
+      display: none;
     }
     .feed-main {
       border: 1px solid #dbdbdb;
