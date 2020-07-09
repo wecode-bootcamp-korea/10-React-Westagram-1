@@ -2,8 +2,6 @@ import React from "react";
 import Nav from "../../yeongjaeshin/Main/Components/Nav/Nav";
 import Feeds from "../Main/Components/Feeds/Feeds";
 import "./main.scss";
-import "../../../Styles/common.scss";
-import "../../../Styles/reset.scss";
 
 class Main extends React.Component {
   render() {

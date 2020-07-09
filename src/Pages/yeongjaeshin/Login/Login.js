@@ -1,8 +1,6 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./login.scss";
-import "../../../Styles/reset.scss";
-import "../../../Styles/common.scss";
 
 class Login extends React.Component {
   constructor() {
