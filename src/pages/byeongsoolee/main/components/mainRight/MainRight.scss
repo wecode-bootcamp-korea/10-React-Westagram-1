@@ -1,0 +1,133 @@
+.mainRight {
+    width : 293px;
+    margin-top: 80px;
+    margin-left: 28px;
+
+    .myProfileBox {
+        display: flex;
+        align-items: center;
+    
+        img {
+            width: 56px;
+            border-radius: 50%;
+        }
+        
+        .profileInfo {
+            padding-left :10px;
+            
+            :nth-child(1) {
+                font-size: var(--font-medium);
+                font-weight: bold;
+            }
+            
+            :nth-child(2) {
+                font-size: var(--font-medium);
+                font-weight: bold;
+                color: var(--grey-dark-color);
+            }
+        }
+    }
+
+    .storyBox {
+        height: 223px;
+        padding : 10px;
+        margin-top: 12px;
+        border: 1px solid var(--grey-light-color);
+        overflow : scroll;
+    }
+
+    .boxHeader {
+        display : flex;
+        justify-content: space-between;
+    
+        :nth-child(1){
+            font-size: 13px;
+            color: var(--grey-dark-color);
+            font-weight: bold;
+        }
+        
+        :nth-child(2){
+            font-size: 13px;
+            font-weight: bold;
+        }
+    }
+
+    .recommendationBox {
+        height : 190px;
+        padding : 10px;
+        margin-top: 10px;
+        border: 1px solid var(--grey-light-color);
+        overflow: hidden;
+
+        .storyPics { 
+            li {
+                display : flex;
+                justify-content: space-between;
+                
+                button {
+                    border : none;
+                    background-color: var(--white-color);
+                    color : var(--followBtn-color);
+                    font-size : var(--font-small);
+                    font-weight: bold;
+                }
+            }
+
+            .picsInfo {
+                padding-right: 40px;
+            }
+        }    
+    }
+
+    .instagramInfo {
+        font-size: var(--font-small);
+        margin-top :10px;
+        color : var(--grey-dark-color)
+        
+        :nth-child(4) {
+            margin-top: 10px;    
+        }
+    }
+    
+    .boxHeader {
+        display : flex;
+        justify-content: space-between;
+    
+        :nth-child(1){
+            font-size: 13px;
+            color: var(--grey-dark-color);
+            font-weight: bold;
+        }
+        
+        :nth-child(2){
+            font-size: 13px;
+            font-weight: bold;
+        }
+    }
+    .storyPics {
+        
+        li {
+            margin-top: 10px;
+            display : flex;
+            justify-content: space;
+            align-items: center;
+        }
+
+        img {
+            width: 40px;
+            border-radius: 50%;
+        }
+
+
+        .picsInfo {
+            padding-left: 10px;
+            font-size: var(--font-small);
+            font-weight: bold;
+
+            :nth-child(2) {
+                color: var(--grey-dark-color);
+            }
+        }
+    }
+}
+

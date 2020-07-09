@@ -1,0 +1,138 @@
+.feedsContainer {
+    width: 614px;
+    margin-top: 80px;
+    border : 1px solid var(--grey-light-color);
+    background-color: var(--white-color);
+
+    .header {
+        margin : 8px;
+        display : flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .profile {
+            display : flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            img {
+                width: 32px;
+            }
+            
+            p {
+                font-size: var(--font-small);
+                font-weight: bold;
+            }
+        }
+    
+        img {
+            width : 16px;
+        }
+    }
+    
+    .feedPic {
+ 
+        img {
+            width : 100%;
+            height: 614px;
+        }
+    }
+
+    .feedLogo {
+        display: flex;
+        justify-content: space-between;
+        margin : 8px;
+        
+        .feedLogoLeft {
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        img {
+            width: 24px;
+        }
+    }
+           
+    .feedReply {
+        margin :8px;
+        
+        .replyLikeTotal {
+            display: flex;
+            align-items: center;
+            
+            img {
+                width :20px;
+                border-radius: 50%;
+            }
+            
+            p {
+                font-size: var(--font-small);
+                font-weight: bold;
+                padding-left: 5px;
+            }
+        }
+        
+        .replyContent {
+            padding-top: 10px;
+            font-size : var(--font-small);
+            font-weight: bold;
+            
+            .firstReply,
+            .secondReply {
+                display: flex;
+                justify-content: space-between;
+                padding-right: 10px;
+
+                img {
+                    width: 12px;
+                    height: 10px;
+                }
+
+            }
+        }
+
+        .replyTime {
+            
+            p{
+                font-size : var(--font-small);
+                color : var(--grey-dark-color);
+            }
+        }
+    }
+    
+    button {
+        border: none; 
+        background-color: var(--white-color);
+        color: var(--grey-dark-color);
+        font-size : var(--font-small);
+    
+        :focus {
+            outline : none;
+        }
+    }
+
+    .feedComment {
+        padding : 13px 8px;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--grey-light-color);
+        
+        input {
+            width: 100%;
+            border : none;
+            font-size: var(--font-small);
+            color : var(--grey-dark-color);
+            
+            :focus {
+                outline : none;
+            }
+        }
+
+        button {
+            width: 30px;
+            color : rgb(135,206,235)
+        }
+    }
+}
+
