@@ -4,7 +4,7 @@ import "./Feeds.scss";
 class Feeds extends React.Component {
   render() {
     return (
-      <article>
+      <article className="Feeds_YJ">
         <div className="feed-story">
           <ul>
             <li className="story-list">

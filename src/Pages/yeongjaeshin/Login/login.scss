@@ -1,4 +1,4 @@
-.container {
+.Login_YJ {
   display: flex;
   height: 100vh;
   align-items: center;
@@ -84,19 +84,8 @@
     .forgetpw {
       text-align: center;
       a {
-        text-decoration: none;
         color: #00376b;
         font-size: 0.8em;
-        &:link {
-          text-decoration: none;
-          color: #00376b;
-          font-size: 0.8em;
-        }
-        &:visited {
-          text-decoration: none;
-          color: #00376b;
-          font-size: 0.8em;
-        }
       }
     }
   }

@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./login.scss";
+import "../../../Styles/reset.scss";
 import "../../../Styles/common.scss";
 
 class Login extends React.Component {
@@ -9,42 +10,43 @@ class Login extends React.Component {
     this.state = {
       id: "admin",
       pw: "admin",
-      uid: "",
-      upw: "",
+      userid: "",
+      userpw: "",
     };
   }
-  goToSignUp() {
-    this.props.history.push("/main");
-  }
-  // handleLogin = (e) => {
-  //   e.preventDefault();
-  //   const { upw, pw } = this.state;
-  //   upw === pw ? this.props.history.push("/main"), "correct" : "wrong";
-  // };
+
+  handleLogin = (e) => {
+    e.preventDefault();
+    const { pw, id, userid, userpw } = this.state;
+    if (id === userid && userpw === pw) {
+      this.props.history.push("/main");
+    }
+  };
 
   handleIdInput = (e) => {
-    this.setState({ uid: e.target.value });
+    this.setState({ userid: e.target.value });
   };
 
   handlePwInput = (e) => {
-    this.setState({ upw: e.target.value });
+    this.setState({ userpw: e.target.value });
   };
 
   handleWrongPw = () => {
-    return this.state.pw === this.state.upw ? "correct" : "wrong";
+    const { userpw, pw } = this.state;
+    return pw === userpw ? "correct" : "wrong";
   };
 
   render() {
-    const { uid, upw } = this.state;
+    const { userid, userpw } = this.state;
     return (
-      <div className="container">
+      <div className="Login_YJ">
         <div className="login-page">
           <img
             alt="logo"
             className="logo"
             src="/images/yeongjaeshin/logo_text.png"
           />
-          <form className="input-user-info">
+          <form className="input-user-info" onSubmit={this.handleLogin}>
             <input
               className="userinfo"
               type="text"
@@ -58,9 +60,8 @@ class Login extends React.Component {
               onChange={this.handlePwInput}
             />
             <button
-              className={!!uid * !!upw ? "activate" : "deactivate"}
+              className={!!userid * !!userpw ? "activate" : "deactivate"}
               type="submit"
-              onClick={this.goToSignUp}
             >
               로그인
             </button>
