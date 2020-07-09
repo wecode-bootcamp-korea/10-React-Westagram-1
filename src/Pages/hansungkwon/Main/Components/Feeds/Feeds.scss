@@ -1,0 +1,231 @@
+main {
+  width: 935px;
+  margin: 0 auto;
+  padding-top: 84px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  .arc-container {
+    width: 614px;
+    overflow: hidden;
+    .feed-story {
+      height: 118px;
+      margin-bottom: 24px;
+      padding: 16px 0 16px 10px;
+      background-color: white;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-y: scroll;
+      .story-list {
+        width: 80px;
+        height: 60px;
+        padding: 0 4px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .user-img {
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(to left, orange, red);
+          border-radius: 100%;
+          img {
+            width: 56px;
+            height: 56px;
+            margin: 2px;
+            object-fit: contain;
+            border: 2px solid white;
+            border-radius: 100%;
+            cursor: pointer;
+          }
+          .story-name {
+            font-size: 14px;
+            font-weight: 400;
+            color: #262626;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .feed-main {
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      background-color: white;
+      margin-bottom: 30px;
+      .feed-userinfo {
+        height: 61px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        .feed-userimg {
+          width: 40px;
+          height: 40px;
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 100%;
+            cursor: pointer;
+          }
+        }
+        .feed-username {
+          width: 542px;
+          height: 41px;
+          padding: 0 14px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          .feed-myid {
+            font-size: 14px;
+            font-weight: 600;
+            color: #262626;
+            cursor: pointer;
+          }
+          .feed-myname {
+            font-size: 12px;
+            font-weight: 400;
+            color: #8e8e8e;
+          }
+        }
+        .feed-more {
+          width: 24px;
+          height: 24px;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            cursor: pointer;
+          }
+        }
+      }
+      .content {
+        .content-img {
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+          }
+        }
+        .content-btn {
+          height: 40px;
+          padding: 0 16px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .left-conbtn {
+            width: 120px;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            .heart-btn {
+              svg {
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 8px;
+                left: 0;
+                cursor: pointer;
+                visibility: hidden;
+              }
+            }
+          }
+          .right-conbtn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+          }
+          .left-conbtn img,
+          .right-conbtn img {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            visibility: block;
+          }
+        }
+      }
+      .comment-area {
+        .like {
+          height: 18px;
+          padding: 0 16px;
+          span {
+            font-size: 14px;
+            font-weight: 600;
+            color: #262626;
+          }
+        }
+        .feed-text {
+          height: 41px;
+          padding: 0 16px;
+          margin-bottom: 4px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          .feed-textinfo {
+            font-size: 14px;
+            color: #262626;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            span:nth-child(1) {
+              font-weight: 600;
+              cursor: pointer;
+            }
+          }
+          .feed-textdate {
+            font-size: 10px;
+            color: #8e8e8e;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+          }
+        }
+        .chat {
+          padding: 0 16px 8px;
+          div {
+            font-weight: 600;
+            font-size: 14px;
+            color: #262626;
+            cursor: pointer;
+            span {
+              font-weight: 400;
+            }
+          }
+        }
+        .comment {
+          height: 56px;
+          padding: 0 16px;
+          border-top: 1px solid #dbdbdb;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .input-box {
+            width: 540px;
+            height: 18px;
+          }
+          .combtn {
+            color: #0095f6;
+            opacity: 0.5;
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
+            &:focus {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
