@@ -5,7 +5,7 @@ import "./MainRight.scss";
 class MainRight extends React.Component {
   render() {
     return (
-      <div className="main__right">
+      <div className="Main__right_JY">
         <div className="main__right-profile">
           <img
             alt="main__right"

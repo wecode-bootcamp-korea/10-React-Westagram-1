@@ -5,11 +5,12 @@ import Feed from "./Components/Feeds/Feeds";
 import MainRight from "./Components/MainRight/MainRight";
 
 import "./Main.scss";
+import "../../../Styles/common.scss";
 
 class Main extends React.Component {
   render() {
     return (
-      <div>
+      <>
         <Nav />
         <main>
           <section>
@@ -17,7 +18,7 @@ class Main extends React.Component {
             <MainRight />
           </section>
         </main>
-      </div>
+      </>
     );
   }
 }

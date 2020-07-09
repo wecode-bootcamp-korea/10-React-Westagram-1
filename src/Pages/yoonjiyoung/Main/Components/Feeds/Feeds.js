@@ -5,7 +5,7 @@ import "./Feeds.scss";
 class Feed extends React.Component {
   render() {
     return (
-      <div className="main__feeds-wrap">
+      <div className="Main__feeds-wrap_JY">
         <div className="main__top-story">
           <div className="story__column">
             <div className="story__user">

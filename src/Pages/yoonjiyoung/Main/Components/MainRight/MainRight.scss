@@ -1,12 +1,14 @@
-.main__right {
+.Main__right_JY {
   width: 300px;
   margin-left: 40px;
   position: relative;
+
   .main__right-profile {
     height: 80px;
     display: flex;
     align-items: center;
     position: fixed;
+
     .main__right-user {
       margin-left: 10px;
       font-size: 16px;
@@ -17,7 +19,6 @@
       border-radius: 50%;
     }
   }
-
   .main__right-recommend {
     width: 300px;
     height: 230px;
@@ -36,12 +37,10 @@
         font-weight: 600;
         color: rgb(145, 145, 145);
       }
-
       .main__right-top-all {
         font-size: 12px;
       }
     }
-
     .recommend__column {
       display: flex;
       justify-content: space-between;
@@ -66,7 +65,6 @@
       }
     }
   }
-
   .main__right-infoTxt {
     position: fixed;
     margin: 320px 0 0 0px;
