@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./Feeds.scss";
-import "../../../../../Styles/common.scss";
-import "../../../../../Styles/reset.scss";
 
 class Feeds extends Component {
   render() {

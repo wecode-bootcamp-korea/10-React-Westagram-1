@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import "./Login.scss";
-import "../../../Styles/reset.scss";
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      id: "admin",
+      id: "admin@admin.com",
       pw: "12345",
       userid: "",
       uesrpw: "",
-      btnColor: "login-btn",
     };
   }
   inputIdValue = (e) => {
@@ -24,13 +22,6 @@ class Login extends Component {
     });
   };
 
-  changeLogin = (e) => {
-    e.preventDefault();
-    this.state.id.length > 0 && this.state.pw.length > 0
-      ? this.setState({ btnColor: "login-canbtn" })
-      : this.setState({ btnColor: "login-btn" });
-  };
-
   goToMain = () => {
     this.props.history.push("/main");
   };
@@ -41,6 +32,9 @@ class Login extends Component {
       this.state.id === this.state.userid &&
       this.state.pw === this.state.userpw
     ) {
+      if (!this.state.userid.indexOf("@") || this.state.userpw.length < 5) {
+        alert("아이디와 비밀번호를 확인해주세요!");
+      }
       this.goToMain();
     } else {
       alert("아이디와 비밀번호를 확인해주세요!");
@@ -68,15 +62,7 @@ class Login extends Component {
                 className="pw-box"
                 placeholder="비밀번호"
               />
-              <button
-                className={
-                  !!this.state.userid * !!this.state.userpw
-                    ? "login-canbtn"
-                    : "login-btn"
-                }
-              >
-                로그인
-              </button>
+              <button className="login-btn">로그인</button>
             </form>
             <p className="login-caption">
               <span>비밀번호를 잊으셨나요?</span>
