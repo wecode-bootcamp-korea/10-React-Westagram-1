@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+
+  .main-container {
+    display: flex;
+    width: 950px;
+    margin: 100px auto 0;
+  }
+
+  .grey {
+    color: grey;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .ago {
+    font-size: 14px;
+    padding-left: 5px;
+  }
+}
