@@ -1,0 +1,50 @@
+.feed-story {
+  height: 122px;
+  padding: 16px 0 16px 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 0 24px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fff;
+  overflow: hidden;
+  overflow-x: scroll;
+  ul {
+    display: flex;
+    .story-list {
+      list-style: none;
+      padding: 0 10px;
+      width: 80px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      .story-profile-img {
+        border-radius: 100px;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        background: linear-gradient(to left, orange, red);
+        margin-bottom: 8px;
+        img {
+          border-radius: 100px;
+          width: 56px;
+          height: 56px;
+          margin-top: 2px;
+          margin-left: 2px;
+          border: 2px solid #fff;
+        }
+      }
+      span {
+        font-size: 14px;
+        color: #262626;
+      }
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

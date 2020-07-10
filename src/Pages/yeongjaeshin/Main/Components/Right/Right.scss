@@ -1,0 +1,121 @@
+.right-fix {
+  width: 293px;
+  .main-feed-right {
+    width: 293px;
+    position: fixed;
+    .main-feed-right-profile {
+      height: 56px;
+      margin-top: 18px;
+      display: flex;
+      padding-left: 5px;
+      justify-content: flex-start;
+      align-items: center;
+      .right-profile-img-box {
+        width: 66px;
+        height: 66px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 56px;
+          height: 56px;
+          border-radius: 100px;
+          object-fit: contain;
+        }
+      }
+      .right-profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10px;
+        line-height: 14px;
+        .right-profile-id {
+          margin: 0 0 2px;
+          padding: 2px;
+          font-size: 15px;
+          color: #262626;
+          font-weight: 600;
+        }
+        .right-profile-introduce {
+          margin: 0 0 2px;
+          padding: 2px;
+          font-size: 12px;
+          color: #8e8e8e;
+        }
+      }
+    }
+    .recommend-container {
+      padding: 8px 0;
+      .right-recommend-box {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        padding: 16px 0;
+        .recommend {
+          font-size: 14px;
+          color: #8e8e8e;
+          font-weight: 600;
+        }
+        .see-all {
+          font-size: 12px;
+          color: #262626;
+          font-weight: 600;
+        }
+      }
+      .recommend-profile-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+        .recommend-profile-img-box {
+          width: 42px;
+          height: 42px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 10px;
+          img {
+            width: 32px;
+            height: 32px;
+            border-radius: 100px;
+          }
+        }
+        .recommend-profile {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 210px;
+          .recommend-profile-id {
+            font-size: 14px;
+            color: #262626;
+            font-weight: 600;
+          }
+          .recommend-profile-introduce {
+            font-size: 12px;
+            color: #8e8e8e;
+            height: 14px;
+          }
+        }
+      }
+    }
+    button {
+      background: transparent;
+      color: #0095f6;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      justify-content: flex-end;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .main-feed-right-copyright {
+    font-size: 11px;
+    color: #c7c7c7;
+    line-height: 18px;
+    p {
+      margin-top: 15px;
+    }
+  }
+}
