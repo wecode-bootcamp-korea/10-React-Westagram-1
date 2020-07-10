@@ -1,29 +1,32 @@
 import React from "react";
-// import "./App.scss"
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
-import Login from "./pages/byeongsoolee/login/Login";
-import Main from "./pages/byeongsoolee/main/Main";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import LoginShin from "./Pages/yeongjaeshin/Login/Login";
+// import MainShin from "./Pages/yeongjaeshin/Main/Main";
+// import LoginKim from "./Pages/hyosikkim/Login/Login";
+// import MainKim from "./Pages/hyosikkim/Main/Main";
+// import LoginKwon from "./Pages/hansungkwon/Login/Login";
+// import MainKwon from "./Pages/hansungkwon/Main/Main";
+import LoginLee from "./pages/byeongsoolee/login/Login";
+import MainLee from "./pages/byeongsoolee/main/Main";
+// import LoginYoon from "./Pages/yoonjiyoung/Login/Login";
+// import MainYoon from "./Pages/yoonjiyoung/Main/Main";
 
-// import Nav from "./components/Nav/Nav"
-// import Feeds from "./components/Feeds/Feeds"
-// import MainRight from "./components/MainRight/MainRight"
-
-
-class Routes extends React.Component {
-  render() {
-    return (
-      <Router>
-        <Switch>
-           <Route exact path="/" component={Login} />
-           <Route exact path="/main" component={Main} />
-        </Switch>
-      </Router>
-    );
-  }
+function Routes() {
+  return (
+    <Router>
+      <Switch>
+        {/* <Route exact path="/login-yeongjae" component={LoginShin} />
+        <Route exact path="/main-yeongjae" component={MainShin} />
+        <Route exact path="/login-hyosik" component={LoginKim} />
+        <Route exact path="/main-hyosik" component={MainKim} />
+        <Route exact path="/login-hansung" component={LoginKwon} />
+        <Route exact path="/main-hansung" component={MainKwon} /> */}
+        <Route exact path="/login-byeongsoo" component={LoginLee} />
+        <Route exact path="/main-byeongsoo" component={MainLee} />
+        {/* <Route exact path="/login-jiyoung" component={LoginYoon} />
+        <Route exact path="/main-jiyoung" component={MainYoon} /> */}
+      </Switch>
+    </Router>
+  );
 }
-
-export default Routes; 
+export default Routes;

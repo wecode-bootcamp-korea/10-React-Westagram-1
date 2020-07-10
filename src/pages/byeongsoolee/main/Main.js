@@ -1,14 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Nav from "./components/nav/Nav"
 import Feed from "./components/feeds/Feed";
 import MainRight from "./components/mainRight/MainRight"
 import "./Main.scss";
 
-
 class Main extends React.Component {
   render() {
     return (
-        <div>
+        <Fragment>
             <div>
                 <Nav />
             </div>
@@ -16,9 +15,9 @@ class Main extends React.Component {
                 <Feed />
                 <MainRight />
             </div>
-        </div>
+        </Fragment>
     );
   }
 }
 
-export default Main; 
+export default Main;  

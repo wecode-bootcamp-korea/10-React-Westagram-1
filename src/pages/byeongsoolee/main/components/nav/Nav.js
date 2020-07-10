@@ -4,7 +4,7 @@ import "./Nav.scss";
 class Nav extends React.Component {
     render() {
       return (
-        <nav className="Nav">
+        <nav className="Nav_BS">
             <div className="container">
                 <div className="logo">
                     <img alt="이미지 로고" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/logo.png"/>
