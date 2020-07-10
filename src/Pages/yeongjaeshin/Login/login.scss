@@ -67,22 +67,27 @@
         border: none;
         font-size: 16px;
         font-weight: 600;
+        &:focus {
+          outline: none;
+        }
       }
     }
-    .wrong {
-      visibility: visible;
-      text-align: center;
-      color: red;
-      margin-bottom: 30%;
-    }
-    .correct {
-      visibility: hidden;
-      text-align: center;
-      color: red;
-      margin-bottom: 30%;
-    }
     .forgetpw {
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 30%;
+      .wrong {
+        visibility: visible;
+        text-align: center;
+        color: red;
+      }
+      .correct {
+        visibility: hidden;
+        text-align: center;
+        color: red;
+      }
       a {
         color: #00376b;
         font-size: 0.8em;

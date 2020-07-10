@@ -6,36 +6,42 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "admin",
+      id: "admin@example.com",
       pw: "admin",
       userid: "",
       userpw: "",
+      submit: false,
+      validate: false,
     };
   }
 
   handleLogin = (e) => {
     e.preventDefault();
-    const { pw, id, userid, userpw } = this.state;
-    if (id === userid && userpw === pw) {
+    const { id, pw, userid, userpw } = this.state;
+    if (userid.includes("@") && id === userid && pw === userpw) {
       this.props.history.push("/main");
+    } else {
+      this.setState({
+        submit: true,
+        validate: false,
+      });
     }
   };
 
   handleIdInput = (e) => {
-    this.setState({ userid: e.target.value });
+    this.setState({
+      userid: e.target.value,
+    });
   };
 
   handlePwInput = (e) => {
-    this.setState({ userpw: e.target.value });
-  };
-
-  handleWrongPw = () => {
-    const { userpw, pw } = this.state;
-    return pw === userpw ? "correct" : "wrong";
+    this.setState({
+      userpw: e.target.value,
+    });
   };
 
   render() {
-    const { userid, userpw } = this.state;
+    const { userid, userpw, submit, validate } = this.state;
     return (
       <div className="Login_YJ">
         <div className="login-page">
@@ -58,14 +64,22 @@ class Login extends React.Component {
               onChange={this.handlePwInput}
             />
             <button
-              className={!!userid * !!userpw ? "activate" : "deactivate"}
+              className={
+                userid.includes("@") && userpw.length >= 5
+                  ? "activate"
+                  : "deactivate"
+              }
               type="submit"
             >
               로그인
             </button>
           </form>
-          <p className="correct">잘못된 비밀번호입니다. 다시 확인하세요.</p>
           <div className="forgetpw">
+            <p
+              className={submit ? (validate ? "correct" : "wrong") : "correct"}
+            >
+              잘못된 비밀번호입니다. 다시 확인하세요.
+            </p>
             <Link to="/">비밀번호를 잊으셨나요?</Link>
           </div>
         </div>
