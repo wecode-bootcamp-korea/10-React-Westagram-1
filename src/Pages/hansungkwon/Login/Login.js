@@ -8,40 +8,37 @@ class Login extends Component {
       id: "admin@admin.com",
       pw: "12345",
       userid: "",
-      uesrpw: "",
+      userpw: "",
+      submit: false,
+      validate: false,
     };
   }
+
   inputIdValue = (e) => {
     this.setState({
       userid: e.target.value,
     });
   };
+
   inputPwValue = (e) => {
     this.setState({
       userpw: e.target.value,
     });
   };
 
-  goToMain = () => {
-    this.props.history.push("/main");
-  };
-
-  tryLogin = (e) => {
+  handleLogin = (e) => {
     e.preventDefault();
-    if (
-      this.state.id === this.state.userid &&
-      this.state.pw === this.state.userpw
-    ) {
-      if (!this.state.userid.indexOf("@") || this.state.userpw.length < 5) {
-        alert("아이디와 비밀번호를 확인해주세요!");
-      }
-      this.goToMain();
+    const { id, pw, userid, userpw } = this.state;
+
+    if (userid.includes("@") && id === userid && pw === userpw) {
+      this.props.history.push("/main");
     } else {
-      alert("아이디와 비밀번호를 확인해주세요!");
+      this.setState({ submit: true, validate: false });
     }
   };
 
   render() {
+    const { userid, userpw, submit, validate } = this.state;
     return (
       <div className="Login_kwon">
         <div className="container">
@@ -49,7 +46,7 @@ class Login extends Component {
             <div className="images">
               <img alt="logo" src="/images/hansungkwon/logo_text.png" />
             </div>
-            <form className="boxes" onSubmit={this.tryLogin}>
+            <form className="boxes" onSubmit={this.handleLogin}>
               <input
                 onChange={this.inputIdValue}
                 type="text"
@@ -62,7 +59,25 @@ class Login extends Component {
                 className="pw-box"
                 placeholder="비밀번호"
               />
-              <button className="login-btn">로그인</button>
+              <div className="login-alert">
+                <p
+                  className={
+                    submit ? (validate ? "correct" : "wrong") : "correct"
+                  }
+                >
+                  아이디와 비밀번호를 확인해주세요!
+                </p>
+              </div>
+
+              <button
+                className={
+                  userid.includes("@") && userpw.length >= 5
+                    ? "login-canbtn"
+                    : "login-btn"
+                }
+              >
+                로그인
+              </button>
             </form>
             <p className="login-caption">
               <span>비밀번호를 잊으셨나요?</span>

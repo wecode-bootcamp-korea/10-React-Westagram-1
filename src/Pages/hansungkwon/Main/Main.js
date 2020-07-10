@@ -11,7 +11,7 @@ class Main extends Component {
         <div className="Main_kwon">
           <main className="main-contatiner">
             <Feeds />
-            <div className="fix-side">
+            <div className="Side_Kwon">
               <div className="side">
                 <div className="side-user">
                   <div className="side-userimg">
