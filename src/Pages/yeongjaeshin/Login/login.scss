@@ -1,0 +1,97 @@
+.Login_YJ {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  background-color: #fafafa;
+  .login-page {
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    height: 600px;
+    width: 400px;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #fff;
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      margin: 0 auto;
+      padding-top: 70px;
+    }
+    .input-user-info {
+      justify-content: center;
+      align-items: center;
+      padding: 10%;
+      width: 100%;
+      margin: 0 auto;
+      .userinfo {
+        display: block;
+        width: 100%;
+        height: 50px;
+        margin-top: 10px;
+        padding-left: 15px;
+        background-color: #fafafa;
+        border-radius: 5px;
+        border: 1px solid rgb(195, 195, 195);
+        &::placeholder {
+          font-size: 1em;
+          color: rgb(150, 150, 150);
+        }
+        &:focus {
+          outline: none;
+          border-color: rgb(118, 118, 118);
+        }
+      }
+      .deactivate {
+        width: 100%;
+        height: 35px;
+        background-color: #c0dffd;
+        color: #fff;
+        margin-top: 6%;
+        border-radius: 4px;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        &:focus {
+          outline: none;
+        }
+      }
+      .activate {
+        width: 100%;
+        height: 35px;
+        background-color: #0095f6;
+        color: #fff;
+        margin-top: 6%;
+        border-radius: 4px;
+        border: none;
+        font-size: 16px;
+        font-weight: 600;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .forgetpw {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 30%;
+      .wrong {
+        visibility: visible;
+        text-align: center;
+        color: red;
+      }
+      .correct {
+        visibility: hidden;
+        text-align: center;
+        color: red;
+      }
+      a {
+        color: #00376b;
+        font-size: 0.8em;
+      }
+    }
+  }
+}
