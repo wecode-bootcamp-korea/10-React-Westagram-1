@@ -18,14 +18,9 @@ class Login extends React.Component {
   handleLogin = (e) => {
     e.preventDefault();
     const { id, pw, userid, userpw } = this.state;
-    if (userid.includes("@") && id === userid && pw === userpw) {
-      this.props.history.push("/main");
-    } else {
-      this.setState({
-        submit: true,
-        validate: false,
-      });
-    }
+    userid.includes("@") && id === userid && pw === userpw
+      ? this.props.history.push("/main-yeongjae")
+      : this.setState({ submit: true, validate: false });
   };
 
   handleIdInput = (e) => {

@@ -1,7 +1,12 @@
 .Main_YJ {
+  display: flex;
+  align-items: flex-start;
   width: 935px;
   margin: 0 auto;
-  padding-top: 84px;
-  display: flex;
-  justify-content: space-between;
+  .main-container {
+    width: 614px;
+    padding-top: 84px;
+    display: flex;
+    flex-direction: column;
+  }
 }

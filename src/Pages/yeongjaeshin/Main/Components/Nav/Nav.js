@@ -7,7 +7,7 @@ class Nav extends React.Component {
       <nav className="Nav_YJ">
         <div className="nav-box">
           <div className="logo-box">
-            <a href="/main" className="logo">
+            <a href="/main-yeongjae" className="logo">
               <img alt="logo" src="/images/yeongjaeshin/logo_text.png" />
             </a>
           </div>
