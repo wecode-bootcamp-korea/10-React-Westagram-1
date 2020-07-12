@@ -68,7 +68,6 @@ class Login extends Component {
                   아이디와 비밀번호를 확인해주세요!
                 </p>
               </div>
-
               <button
                 className={
                   userid.includes("@") && userpw.length >= 5

@@ -1,0 +1,45 @@
+.Story_Kwon {
+  height: 118px;
+  margin-bottom: 24px;
+  padding: 16px 0 16px 10px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: scroll;
+  .story-list {
+    width: 80px;
+    height: 60px;
+    padding: 0 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .user-img {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(to left, orange, red);
+      border-radius: 100%;
+      img {
+        width: 56px;
+        height: 56px;
+        margin: 2px;
+        object-fit: contain;
+        border: 2px solid white;
+        border-radius: 100%;
+        cursor: pointer;
+      }
+      .story-name {
+        font-size: 14px;
+        font-weight: 400;
+        color: #262626;
+        cursor: pointer;
+      }
+    }
+  }
+}
+::-webkit-scrollbar {
+  display: none;
+}
