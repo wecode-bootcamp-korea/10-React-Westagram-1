@@ -13,9 +13,8 @@ class Comment extends React.Component {
   index = 0;
 
   handleComment = (e) => {
-    const { name, value } = e.target;
     this.setState({
-      [name]: value,
+      comment: e.target.value,
     });
   };
 
@@ -74,7 +73,6 @@ class Comment extends React.Component {
         >
           <input
             type="text"
-            name="comment"
             placeholder="댓글 달기..."
             className="input"
             value={comment}
