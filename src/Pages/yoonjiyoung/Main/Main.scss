@@ -6,11 +6,7 @@
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-}
-
-li {
+.comment {
   margin: 3px 20px;
   display: flex;
   align-items: center;
@@ -37,23 +33,14 @@ main {
 }
 
 .user__name {
-  margin-right: 10px;
-  font-size: 16px;
-  font-weight: 600;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: bolder;
 }
 
 section {
   display: flex;
   justify-content: center;
-}
-
-.delBtn {
-  position: absolute;
-  margin-left: 550px;
-  font-size: 15px;
-  color: rgba(173, 173, 173, 0.8);
-  background-color: white;
-  border: none;
 }
 
 @media screen and (max-width: 700px) {
@@ -105,10 +92,4 @@ section {
   left: 10px;
   text-align: left;
   position: absolute;
-}
-
-.search__delBtn {
-  position: absolute;
-  right: 0px;
-  bottom: 5px;
 }

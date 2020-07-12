@@ -115,7 +115,7 @@
 
     .like__people {
       margin-left: 12px;
-
+      font-size: 14px;
       .like-id,
       .like-num {
         font-weight: 600;
@@ -127,12 +127,14 @@
     margin: 10px 0 0 19px;
     line-height: 1.2em;
     display: flex;
+    align-items: center;
 
     .statusTxt {
       width: 200px;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+      font-size: 14px;
     }
     .statusTxt__more {
       cursor: pointer;
@@ -170,9 +172,34 @@
       outline: none;
     }
     .comment__post-btn-clicked {
+      width: 50px;
+      background-color: white;
+      border: none;
+      border-top: 1px solid rgba(173, 173, 173, 0.3);
       color: rgb(0, 149, 246);
+      outline: none;
       font-weight: 600;
       cursor: pointer;
     }
   }
+}
+.js-feedCommentList {
+  position: relative;
+  margin: 5px 0px 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.feedCommentList {
+  margin: 2px 0px;
+  font-size: 14px;
+}
+
+.delBtn {
+  position: absolute;
+  right: 15px;
+  font-size: 12px;
+  color: rgba(173, 173, 173, 0.8);
+  background-color: white;
+  border: none;
 }

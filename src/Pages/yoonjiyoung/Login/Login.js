@@ -10,26 +10,19 @@ class Login extends React.Component {
     this.state = {
       id: "",
       pw: "",
-      userId: "@admin",
-      userPw: "abc1234",
+      userId: "yojuyoon@wecode.com",
+      userPw: "wecode",
+      click: false,
     };
   }
 
-  goToMain(e) {
-    e.preventDefault();
-    if (
-      this.state.id === this.state.userId &&
-      this.state.userPw === this.state.pw
-    ) {
+  goToMain = () => {
+    const { id, pw, userId, userPw } = this.state;
+    if (userId.includes("@") && id === userId && pw === userPw) {
       this.props.history.push("/main");
-    } else {
-      alert("아이디와 비밀번호를 다시 입력하세요!");
+    } else if (id !== userId && pw !== userPw) {
+      this.setState({ click: true });
     }
-  }
-
-  state = {
-    id: "",
-    pw: "",
   };
 
   handleChangeId = (e) => {
@@ -43,6 +36,11 @@ class Login extends React.Component {
       pw: e.target.value,
     });
   };
+  handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      this.goToMain();
+    }
+  };
 
   render() {
     const { id, pw } = this.state;
@@ -55,26 +53,33 @@ class Login extends React.Component {
           <div className="login__input">
             <input
               onChange={this.handleChangeId}
+              onKeyUp={this.handleKeyPress}
               className="input__id"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
             />
             <input
               onChange={this.handleChangePw}
+              onKeyUp={this.handleKeyPress}
               className="input__pw"
               type="password"
               placeholder="비밀번호"
             />
             <button
-              onClick={this.goToMain.bind(this)}
+              onClick={this.goToMain}
               className={
-                id.length && pw.length > 1 ? "login__activateBtn" : "login__btn"
+                id.includes("@") && pw.length >= 5
+                  ? "login__activateBtn"
+                  : "login__btn"
               }
             >
               로그인
             </button>
           </div>
           <div className="login__forgetPw">
+            <p className={this.state.click ? "wrongPw" : "correctPw"}>
+              잘못된 비밀번호입니다. 다시 확인하세요.
+            </p>
             <Link to="/pw">비밀번호를 잊으셨나요?</Link>
           </div>
         </div>
