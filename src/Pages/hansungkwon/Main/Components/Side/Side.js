@@ -98,4 +98,5 @@ class Side extends Component {
     );
   }
 }
+
 export default Side;

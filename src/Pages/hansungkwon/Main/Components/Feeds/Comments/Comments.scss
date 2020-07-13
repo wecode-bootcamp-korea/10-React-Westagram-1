@@ -71,6 +71,9 @@
     .input-box {
       width: 540px;
       height: 18px;
+      &:focus {
+        outline: none;
+      }
     }
     .commentOff {
       color: #0095f6;

@@ -14,15 +14,9 @@ class Login extends Component {
     };
   }
 
-  inputIdValue = (e) => {
+  inputValue = (e) => {
     this.setState({
-      userid: e.target.value,
-    });
-  };
-
-  inputPwValue = (e) => {
-    this.setState({
-      userpw: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -48,14 +42,16 @@ class Login extends Component {
             </div>
             <form className="boxes" onSubmit={this.handleLogin}>
               <input
-                onChange={this.inputIdValue}
+                onChange={this.inputValue}
                 type="text"
+                name="userid"
                 className="id-box"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
               />
               <input
-                onChange={this.inputPwValue}
+                onChange={this.inputValue}
                 type="password"
+                name="userpw"
                 className="pw-box"
                 placeholder="비밀번호"
               />

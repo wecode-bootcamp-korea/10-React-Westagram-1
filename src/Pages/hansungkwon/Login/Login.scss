@@ -47,6 +47,9 @@
           font-size: 11px;
           color: #9c9c9c;
           background-color: #f9f9f9;
+          &:focus {
+            outline: none;
+          }
         }
         .id-box::placeholder,
         .pw-box::placeholder {

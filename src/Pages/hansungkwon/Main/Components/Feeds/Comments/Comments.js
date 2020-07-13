@@ -43,6 +43,7 @@ class Comments extends Component {
     this.setState({
       comments: nextComments,
     });
+    this.num = 0;
   };
 
   render() {

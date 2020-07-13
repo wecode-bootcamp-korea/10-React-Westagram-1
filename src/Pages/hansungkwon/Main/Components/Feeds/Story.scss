@@ -31,12 +31,13 @@
         border-radius: 100%;
         cursor: pointer;
       }
-      .story-name {
-        font-size: 14px;
-        font-weight: 400;
-        color: #262626;
-        cursor: pointer;
-      }
+    }
+    .story-name {
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #262626;
+      cursor: pointer;
     }
   }
 }

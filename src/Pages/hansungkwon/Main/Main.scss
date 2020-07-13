@@ -1,12 +1,14 @@
-.feeds-container {
-  width: 935px;
-  margin: 0 auto;
-  padding-top: 84px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  .arc-container {
-    width: 614px;
-    overflow: hidden;
+.Main_Kwon {
+  .feeds-container {
+    width: 935px;
+    margin: 0 auto;
+    padding-top: 84px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    .arc-container {
+      width: 614px;
+      overflow: hidden;
+    }
   }
 }
