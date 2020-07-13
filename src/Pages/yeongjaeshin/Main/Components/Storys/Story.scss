@@ -1,6 +1,6 @@
 .feed-story {
   height: 122px;
-  max-width: 614px;
+  width: 614px;
   padding: 16px 0 16px 10px;
   display: flex;
   justify-content: flex-start;
@@ -29,7 +29,11 @@
         width: 60px;
         height: 60px;
         margin: 0 auto;
-        background: linear-gradient(to left, orange, red);
+        background: linear-gradient(
+          to top right,
+          rgb(252, 175, 69),
+          rgb(225, 48, 108)
+        );
         margin-bottom: 8px;
         img {
           border-radius: 100px;

@@ -39,6 +39,7 @@ class Comment extends React.Component {
     this.setState({
       comments: filterComment,
     });
+    this.index = 0;
   };
 
   render() {

@@ -2,7 +2,20 @@ import React from "react";
 import "./Right.scss";
 
 class Right extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      recommendData: [
+        { userid: "realisshoman", imgSrc: "http://bitly.kr/xcBDWWXv1hr" },
+        { userid: "nasungcityboy", imgSrc: "http://bitly.kr/jgstnMkAhEf" },
+        { userid: "thisloop", imgSrc: "http://bitly.kr/pALfma6bNV8" },
+        { userid: "kimehwa", imgSrc: "http://bitly.kr/KU7jRuBbyxc" },
+        { userid: "thequiett", imgSrc: "http://bitly.kr/6NxEpTSJAmP" },
+      ],
+    };
+  }
   render() {
+    const { recommendData } = this.state;
     return (
       <div className="right-fix">
         <div className="main-feed-right">
@@ -23,81 +36,24 @@ class Right extends React.Component {
               <span className="recommend">회원님을 위한 추천</span>
               <span className="see-all">모두 보기</span>
             </div>
-            <div className="recommend-profile-container">
-              <div className="recommend-profile-img-box">
-                <img
-                  alt="recommend-profile-img"
-                  src="http://bitly.kr/xcBDWWXv1hr"
-                />
-              </div>
-              <ul className="recommend-profile">
-                <li className="recommend-profile-id">realisshoman</li>
-                <li className="recommend-profile-introduce">
-                  회원님을 팔로우 합니다
-                </li>
-              </ul>
-              <button>팔로우</button>
-            </div>
-            <div className="recommend-profile-container">
-              <div className="recommend-profile-img-box">
-                <img
-                  alt="recommend-profile-img"
-                  src="http://bitly.kr/jgstnMkAhEf"
-                />
-              </div>
-              <ul className="recommend-profile">
-                <li className="recommend-profile-id">nasungcityboy</li>
-                <li className="recommend-profile-introduce">
-                  회원님을 팔로우 합니다
-                </li>
-              </ul>
-              <button>팔로우</button>
-            </div>
-            <div className="recommend-profile-container">
-              <div className="recommend-profile-img-box">
-                <img
-                  alt="recommend-profile-img"
-                  src="http://bitly.kr/pALfma6bNV8"
-                />
-              </div>
-              <ul className="recommend-profile">
-                <li className="recommend-profile-id">thisloop</li>
-                <li className="recommend-profile-introduce">
-                  회원님을 팔로우 합니다
-                </li>
-              </ul>
-              <button>팔로우</button>
-            </div>
-            <div className="recommend-profile-container">
-              <div className="recommend-profile-img-box">
-                <img
-                  alt="recommend-profile-img"
-                  src="http://bitly.kr/KU7jRuBbyxc"
-                />
-              </div>
-              <ul className="recommend-profile">
-                <li className="recommend-profile-id">kimehwa</li>
-                <li className="recommend-profile-introduce">
-                  회원님을 팔로우 합니다
-                </li>
-              </ul>
-              <button>팔로우</button>
-            </div>
-            <div className="recommend-profile-container">
-              <div className="recommend-profile-img-box">
-                <img
-                  alt="recommend-profile-img"
-                  src="http://bitly.kr/6NxEpTSJAmP"
-                />
-              </div>
-              <ul className="recommend-profile">
-                <li className="recommend-profile-id">thequiett</li>
-                <li className="recommend-profile-introduce">
-                  회원님을 팔로우 합니다
-                </li>
-              </ul>
-              <button>팔로우</button>
-            </div>
+            {recommendData.map((item, i) => {
+              return (
+                <div key={i}>
+                  <div className="recommend-profile-container">
+                    <div className="recommend-profile-img-box">
+                      <img alt="recommend-profile-img" src={item.imgSrc} />
+                    </div>
+                    <ul className="recommend-profile">
+                      <li className="recommend-profile-id">{item.userid}</li>
+                      <li className="recommend-profile-introduce">
+                        회원님을 팔로우 합니다
+                      </li>
+                    </ul>
+                    <button>팔로우</button>
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className="main-feed-right-copyright">
             <p>

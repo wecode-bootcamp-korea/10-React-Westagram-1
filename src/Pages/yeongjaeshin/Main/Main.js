@@ -13,11 +13,11 @@ class Main extends React.Component {
         <div className="Main_YJ">
           <main className="main-container">
             <Story />
-            <Feeds />
-            <Feeds />
-            <Feeds />
-            <Feeds />
-            <Feeds />
+            {Array(5)
+              .fill()
+              .map((_, i) => {
+                return <Feeds key={i} />;
+              })}
           </main>
           <Right />
         </div>
