@@ -1,0 +1,95 @@
+.Comment_Kwon {
+  .chat {
+    max-height: 48px;
+    overflow: hidden;
+    padding: 0 16px;
+    display: block;
+    overflow-y: scroll;
+    .chat-key {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .chat-view {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+        color: #262626;
+        .chat-user {
+          margin-right: 5px;
+          cursor: pointer;
+        }
+        .chat-up {
+          font-weight: 400;
+        }
+        .remove-btn {
+          margin-left: 10px;
+          color: #0095f6;
+          font-weight: 400;
+          font-size: 10px;
+          opacity: 0.5;
+          border: 0;
+          background-color: transparent;
+          cursor: pointer;
+        }
+      }
+      .chat-like {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+        color: #262626;
+        cursor: pointer;
+        .chat-heart {
+          width: 20px;
+          height: 20px;
+          margin: 2px;
+          object-fit: contain;
+          border: 2px solid white;
+          border-radius: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .chat-textdate {
+    padding: 4px 16px;
+    margin-bottom: 8px;
+    font-size: 10px;
+    color: #8e8e8e;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .comment {
+    height: 56px;
+    padding: 0 16px;
+    border-top: 1px solid #dbdbdb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .input-box {
+      width: 540px;
+      height: 18px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .commentOff {
+      color: #0095f6;
+      font-weight: 600;
+      opacity: 1;
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .commentOn {
+      color: #0095f6;
+      font-weight: 400;
+      opacity: 0.5;
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+}
