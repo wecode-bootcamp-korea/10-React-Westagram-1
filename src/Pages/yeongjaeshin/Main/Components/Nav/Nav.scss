@@ -6,9 +6,9 @@
   position: fixed;
   .nav-box {
     display: flex;
-    width: 975px;
+    max-width: 975px;
     height: 54px;
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
     margin: 0 auto;
     align-items: center;
     justify-content: space-between;

@@ -1,57 +1,6 @@
 .Feeds_YJ {
-  width: 100%;
-  max-width: 614px;
+  width: 614px;
   margin-right: 28px;
-  .feed-story {
-    height: 122px;
-    padding: 16px 0 16px 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0 0 24px;
-    border: 1px solid #dbdbdb;
-    border-radius: 3px;
-    background-color: #fff;
-    overflow: hidden;
-    overflow-x: scroll;
-    ul {
-      display: flex;
-      .story-list {
-        list-style: none;
-        padding: 0 10px;
-        width: 80px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        .story-profile-img {
-          border-radius: 100px;
-          width: 60px;
-          height: 60px;
-          margin: 0 auto;
-          background: linear-gradient(to left, orange, red);
-          margin-bottom: 8px;
-          img {
-            border-radius: 100px;
-            width: 56px;
-            height: 56px;
-            margin-top: 2px;
-            margin-left: 2px;
-            border: 2px solid #fff;
-          }
-        }
-        span {
-          font-size: 14px;
-          color: #262626;
-        }
-      }
-    }
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
   .feeds {
     background-color: #fff;
     border-radius: 3px;
@@ -60,7 +9,7 @@
     header {
       display: flex;
       height: 60px;
-      padding: 16px;
+      padding: 12px;
       align-items: center;
       .feed-profile-img {
         width: 42px;
@@ -128,18 +77,16 @@
             object-fit: contain;
             cursor: pointer;
           }
+          .fillheart {
+            font-size: 24px;
+            position: absolute;
+            color: rgb(237, 73, 86);
+            visibility: hidden;
+            cursor: pointer;
+          }
         }
         .heart {
           visibility: visible;
-        }
-        .fillheart {
-          font-size: 24px;
-          position: absolute;
-          margin-left: 6px;
-          margin-top: 7px;
-          color: rgb(237, 73, 86);
-          visibility: hidden;
-          cursor: pointer;
         }
       }
       .icon-box-right {
@@ -161,7 +108,7 @@
     .like-count {
       margin: 0 0 8px;
       margin-top: 5px;
-      padding: 0 16px;
+      padding-left: 16px;
       p {
         font-size: 14px;
         font-weight: 600;
@@ -169,7 +116,7 @@
       }
     }
     .feed-article {
-      padding: 0 16px;
+      padding-left: 16px;
       p {
         line-height: 18px;
       }
@@ -177,60 +124,14 @@
         font-size: 14px;
         font-weight: 700;
       }
-
       .feed-article-comment {
         font-size: 14px;
         font-weight: 400;
       }
-
       .feed-article-hashtag {
         font-size: 14px;
         font-weight: 400;
         color: #00376b;
-      }
-    }
-    .comment {
-      max-height: 50px;
-      overflow: hidden;
-      overflow-y: scroll;
-      li {
-        font-size: 14px;
-        padding: 0 16px;
-        padding-top: 5px;
-        color: #262626;
-      }
-    }
-    .article-time {
-      padding: 0 16px;
-      font-size: 10px;
-      color: #8e8e8e;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    .comment-input {
-      height: 56px;
-      border-top: 1px solid #efefef;
-      margin: 4px 0 0;
-      padding: 0 16px;
-      display: flex;
-      justify-content: space-between;
-      input {
-        width: 90%;
-        &:focus {
-          outline: none;
-        }
-      }
-      button {
-        background: transparent;
-        color: #0095f6;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        justify-content: flex-end;
-        opacity: 0.5;
-        &:focus {
-          outline: none;
-        }
       }
     }
   }
