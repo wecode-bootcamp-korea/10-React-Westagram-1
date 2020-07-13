@@ -3,6 +3,8 @@ nav {
   position: fixed;
   top: 0;
   border-bottom: 1px solid lightgrey;
+  background-color: white;
+  z-index: 9999;
 
   .nav-container {
     display: flex;
@@ -53,7 +55,7 @@ nav {
         position: absolute;
         color: #dbdbdb;
         font-size: 13px;
-        left: 70px;
+        left: 65px;
         transition: all 0.1ms ease;
       }
 

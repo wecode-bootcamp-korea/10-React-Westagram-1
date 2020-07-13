@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from './Components/Nav/Nav';
-import Feed from './Components/Feeds/Feeds';
+import Feeds from './Components/Feeds/Feeds';
 import MainRight from './Components/MainRight/MainRight';
 import '../../../Styles/reset.scss';
 import '../../../Styles/common.scss';
@@ -11,11 +11,11 @@ class Main extends React.Component {
     return (
       <div className="Main_KHS">
         <Nav />
-        <main>
-          <div className="main-container">
-            <Feed />
-            <MainRight />
+        <main className="main-container">
+          <div className="feeds-container">
+            <Feeds />
           </div>
+          <MainRight />
         </main>
       </div>
     );

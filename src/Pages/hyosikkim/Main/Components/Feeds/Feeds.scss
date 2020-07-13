@@ -1,10 +1,10 @@
 .Feeds_KHS {
   width: 601px;
-  margin-bottom: 50px;
 
   article {
     border: 1px solid lightgrey;
     margin-bottom: 50px;
+    background-color: white;
 
     .article__header {
       height: 60px;
@@ -44,13 +44,14 @@
     }
 
     .article__center {
-      padding: 0 14px;
+      // padding: 0 14px;
 
       .article__center-icon {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 40px;
+        padding: 0 10px 0 15px;
 
         .article-icon {
           width: 26px;
@@ -75,90 +76,100 @@
         display: flex;
         align-items: center;
         height: 17.6px;
+        padding: 0 10px 0 15px;
 
         .like-picture {
           width: 22px;
           height: 22px;
           border-radius: 70%;
-          margin: 0 6px 0 6px;
+          margin: 0 6px 0 0;
         }
       }
 
-      .comments {
-        padding: 10px 0 5px 5px;
+      // .comments {
+      //   padding: 10px 0 5px 5px;
 
-        .comment {
-          display: flex;
-          justify-content: space-between;
+      //   .comment {
+      //     display: flex;
+      //     justify-content: space-between;
 
-          .comment-text {
-            font-size: 14px;
-            padding-left: 5px;
-          }
+      //     .comment-text {
+      //       font-size: 14px;
+      //       padding-left: 5px;
+      //     }
 
-          .comment-icon-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+      //     .comment-icon-container {
+      //       display: flex;
+      //       justify-content: space-between;
+      //       align-items: center;
 
-            .dot {
-              width: 15px;
-              height: 15px;
-              background: none;
-              border: none;
-              outline: 0;
-              cursor: pointer;
-              margin-right: 10px;
+      //       .dot {
+      //         width: 15px;
+      //         height: 15px;
+      //         background: none;
+      //         border: none;
+      //         outline: 0;
+      //         cursor: pointer;
+      //         margin-right: 10px;
 
-              img {
-                width: 15px;
-                height: 15px;
-              }
-            }
+      //         img {
+      //           width: 15px;
+      //           height: 15px;
+      //         }
+      //       }
 
-            .comment-heart {
-              width: 17px;
-              height: 12px;
-              padding-right: 5px;
-            }
-          }
-        }
-      }
+      //       .comment-heart {
+      //         width: 17px;
+      //         height: 12px;
+      //         padding-right: 5px;
+      //       }
+      //     }
+      //   }
+      // }
     }
 
-    .border-bottom-line {
-      border-bottom: 1px solid lightgrey;
-    }
+    // .border-bottom-line {
+    //   border-bottom: 1px solid lightgrey;
+    // }
 
-    .add-comment {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 40px;
-      padding: 0 18px;
+    // .add-comment {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   align-items: center;
+    //   height: 40px;
+    //   padding: 0 18px;
 
-      .add-btn {
-        color: skyblue;
-        background: none;
-        border: none;
-        outline: 0;
-        cursor: pointer;
-        padding: 0;
-      }
+    //   .add-btn {
+    //     color: skyblue;
+    //     background: none;
+    //     border: none;
+    //     outline: 0;
+    //     cursor: pointer;
+    //     padding: 0;
+    //   }
 
-      .add-input {
-        border: none;
-        width: 535px;
+    //   .add-btn-changed {
+    //     color: #0095f6;
+    //     background: none;
+    //     border: none;
+    //     outline: 0;
+    //     cursor: pointer;
+    //     padding: 0;
+    //   }
 
-        &::placeholder {
-          color: grey;
-          font-size: 14px;
-        }
+    //   .add-input {
+    //     border: none;
+    //     width: 535px;
 
-        &:focus {
-          outline: none;
-        }
-      }
-    }
+    //     &::placeholder {
+    //       color: grey;
+    //       font-size: 14px;
+    //     }
+
+    //     &:focus {
+    //       outline: none;
+    //     }
+    //   }
+    // }
   }
 }

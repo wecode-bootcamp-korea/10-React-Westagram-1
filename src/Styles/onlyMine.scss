@@ -1,7 +1,15 @@
 .main-container {
   display: flex;
-  width: 950px;
-  margin: 100px auto 0;
+  justify-content: space-between;
+  width: 935px;
+  margin: 0 auto;
+  padding-top: 100px;
+
+  .feeds-container {
+    width: 950px;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .grey {

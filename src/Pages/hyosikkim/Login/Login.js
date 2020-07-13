@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import '../../../Styles/reset.scss';
-import '../../../Styles/onlyMine.scss';
 import './Login.scss';
 
 class Login extends React.Component {
@@ -11,21 +10,16 @@ class Login extends React.Component {
     this.state = {
       id: '',
       pw: '',
-      adminId: 'hyosikkim',
-      adminPw: '1234',
+      adminId: '@hyosikkim',
+      adminPw: '123456',
     };
   }
 
-  handleId = (e) => {
+  handleIdPw = (e) => {
     this.setState({
-      id: e.target.value,
+      [e.target.name]: e.target.value,
     });
-  };
-
-  handlePw = (e) => {
-    this.setState({
-      pw: e.target.value,
-    });
+    console.log(e.target);
   };
 
   loginToMain = () => {
@@ -33,31 +27,48 @@ class Login extends React.Component {
   };
 
   checkIdPw = () => {
-    if (this.state.id === this.state.adminId && this.state.pw === this.state.adminPw) {
+    const { id, pw, adminId, adminPw } = this.state;
+    console.log(id, pw);
+    if (id === adminId && pw === adminPw) {
       this.loginToMain();
+    } else {
+      alert('비밀번호가 맞지 않습니다.');
+    }
+  };
+
+  loginEnter = (e) => {
+    if (e.keyCode === 13) {
+      this.checkIdPw();
     }
   };
 
   render() {
+    const { id, pw } = this.state;
     return (
       <div className="Login_KHS">
-        <div className="login-container">
+        <div className="login-container" onKeyUp={this.loginEnter}>
           <img className="box img" src="/images/hyosikkim/logo_text.png" alt="로고" />
           <input
             className="box input id"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
-            value={this.state.id}
-            onChange={this.handleId}
+            value={id}
+            onChange={this.handleIdPw}
+            name="id"
           />
           <input
             className="box input pw"
             type="password"
             placeholder="비밀번호"
-            value={this.state.pw}
-            onChange={this.handlePw}
+            value={pw}
+            onChange={this.handleIdPw}
+            name="pw"
           />
-          <button className="box login" onClick={this.checkIdPw}>
+          <button
+            // className={id.length * pw.length > 0 ? 'box login-changed' : 'box login'}
+            className={id.includes('@') && pw.length >= 5 ? 'box login-changed' : 'box login'}
+            onClick={this.checkIdPw}
+          >
             로그인
           </button>
           <span className="box forget">비밀번호를 잊으셨나요?</span>
