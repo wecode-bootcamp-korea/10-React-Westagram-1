@@ -2,7 +2,52 @@ import React from "react";
 import "./Feed.scss";
 
 class Feed extends React.Component {
+    constructor(props){
+        super();
+    
+    this.state = {
+        comments : ["tottenham_official wow Jisung Park is my favorite player!", "real_madrid_official Jisung Park is a living lenged"],
+        typeComment:"",
+                }   
+    }
+
+    textChange = (e) => {
+        this.setState({
+            typeComment : e.target.value
+        })
+    }
+
+    add =()=> {
+        const { comments,typeComment } = this.state
+        typeComment.length !== 0 && 
+        this.setState({
+            comments : comments.concat(`hm_son7 `+typeComment),
+            typeComment :""
+        });
+    }
+
+    handleKeyPress = (e) => {
+        e.keyCode === 13 && this.add() 
+    }
+    
+    handleDelete = (index) => {
+        const tempArr = this.state.comments.slice(0,index)
+        const afterDeleteArr = this.state.comments.slice(index+1)
+        this.setState({
+            comments: [...tempArr, ...afterDeleteArr]
+        })
+    }
+    
     render() {
+        const commentList = this.state.comments.map((typeComment,index) => {
+            return (<li className="replyList" key={index}>{typeComment}
+                <span className="imgList"> 
+                <span onClick={() => this.handleDelete(index)}>삭제</span>
+                </span>
+                </li>
+                ) }
+        );
+    
       return (
         <div className="Feed_BS">
             <div className="feedsContainer">
@@ -30,24 +75,18 @@ class Feed extends React.Component {
                         <p>tottenham_official님 외 7천명이 좋아합니다</p>
                     </div>
                     <div className="replyContent">
-                        <div className="firstReply">
-                            <p>tottenham_official wow Jisung Park is my favorite player!
-                            <button type="text">...더보기</button>
-                            </p>
-                            <img alt="하트" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"/>
-                        </div>
-                        <div className="secondReply">
-                            <p>real_madrid_official Jisung Park is a living lenged</p>
-                            <img alt="하트" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"/>
-                        </div>
+                        <ul>
+                            {commentList}
+                        </ul>
                     </div>
                     <div className="replyTime">
                         <p>42분 전</p>
                     </div>
                 </div>
                 <div className="feedComment">
-                <input type="text" className="commentBox" placeholder="댓글 달기..."/>          
-                <button className="commentBtn">게시</button>
+                <input type="text" value={this.state.typeComment} onChange ={this.textChange} onKeyUp ={this.handleKeyPress}
+                 className="commentBox" placeholder="댓글 달기..."/>          
+                <button onClick={this.add} className="commentBtn">게시</button>
                 </div>
             </div>
         </div>   

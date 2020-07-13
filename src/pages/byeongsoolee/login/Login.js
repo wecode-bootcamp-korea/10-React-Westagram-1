@@ -7,7 +7,11 @@ class Login extends React.Component {
     this.state = {
       backgroundColor : "",
       id : "",
-      password : ""
+      password : "",
+      ready : false,
+      myId : "qudtn12@",
+      myPassword :"qudtn12",
+      passwordError : false
     }
   }
 
@@ -19,15 +23,21 @@ class Login extends React.Component {
   
   inputPasswordValue = (e) => {
     this.setState({
-      password : e.target.value
+      password : e.target.value,
+      ready : e.target.value.length>5&&this.state.id.includes('@') ? true : false
     })
   }
 
-  goToMainPage(e) {
-    this.props.history.push('/main-byeongsoo');
-    e.preventDefault();
-    console.log("ID",this.state.id);
-    console.log("Password",this.state.password);
+  goToMainPage = (e)=> {
+    const { id,password,myId,myPassword } = this.state
+    if(id=== myId && password === myPassword) {
+      this.props.history.push('/main-byeongsoo')
+    }
+    else {
+      this.setState({
+        passwordError : true 
+      })
+    }
   }
 
   render() {
@@ -40,10 +50,10 @@ class Login extends React.Component {
             <div className="InfoBox">
                 <input type="text" value={this.state.id} onChange={this.inputIdValue} className="login contents id" placeholder="전화번호, 사용자 이름 또는 이메일" />
                 <input type="password" value={this.state.password} onChange={this.inputPasswordValue} className="login contents pwd" placeholder="비밀번호" />
-                <button className="login btn" 
-                  style={{backgroundColor:this.state.id.includes("@") && this.state.password.length >5 ? "red" :"var(--white-blue-color)" }}
-                 onClick={this.goToMainPage.bind(this)}>로그인</button>
+                <button className={this.state.ready ? "login ready" : "login btn"}
+                 onClick={this.goToMainPage}>로그인</button>
             </div>
+            <div className={this.state.passwordError ? "error":"noError"}>잘못된 비밀번호입니다. 다시 확인하세요</div>
             <div className="forgetPwd">비밀번호를 잊으셨나요?</div>
         </div>
       </div>  
