@@ -2,8 +2,6 @@ import React from 'react';
 import Nav from './Components/Nav/Nav';
 import Feeds from './Components/Feeds/Feeds';
 import MainRight from './Components/MainRight/MainRight';
-import '../../../Styles/reset.scss';
-import '../../../Styles/common.scss';
 import '../../../Styles/onlyMine.scss';
 
 class Main extends React.Component {
