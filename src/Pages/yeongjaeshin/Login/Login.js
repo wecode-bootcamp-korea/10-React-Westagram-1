@@ -15,28 +15,21 @@ class Login extends React.Component {
     };
   }
 
-  handleLogin = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault();
     const { id, pw, userid, userpw } = this.state;
-    if (userid.includes("@") && id === userid && pw === userpw) {
-      this.props.history.push("/main");
-    } else {
-      this.setState({
-        submit: true,
-        validate: false,
-      });
-    }
+    userid.includes("@") && id === userid && pw === userpw
+      ? this.props.history.push("/main-yeongjae")
+      : this.setState({
+          submit: true,
+          validate: false,
+        });
   };
 
-  handleIdInput = (e) => {
+  handleUserInfo = (e) => {
+    const { name, value } = e.target;
     this.setState({
-      userid: e.target.value,
-    });
-  };
-
-  handlePwInput = (e) => {
-    this.setState({
-      userpw: e.target.value,
+      [name]: value,
     });
   };
 
@@ -50,18 +43,22 @@ class Login extends React.Component {
             className="logo"
             src="/images/yeongjaeshin/logo_text.png"
           />
-          <form className="input-user-info" onSubmit={this.handleLogin}>
+          <form className="input-user-info" onSubmit={this.handleSubmit}>
             <input
               className="userinfo"
               type="text"
+              value={userid}
+              name="userid"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={this.handleIdInput}
+              onChange={this.handleUserInfo}
             />
             <input
               className="userinfo"
               type="password"
+              value={userpw}
+              name="userpw"
               placeholder="비밀번호"
-              onChange={this.handlePwInput}
+              onChange={this.handleUserInfo}
             />
             <button
               className={

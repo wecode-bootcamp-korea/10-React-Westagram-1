@@ -1,0 +1,78 @@
+.comment {
+  max-height: 50px;
+  overflow: hidden;
+  overflow-y: scroll;
+  li {
+    width: 100%;
+    font-size: 14px;
+    padding: 0 16px;
+    padding-top: 5px;
+    color: #262626;
+    span {
+      font-weight: 700;
+    }
+    p {
+      display: inline-block;
+      margin-left: 5px;
+    }
+    button {
+      float: right;
+      background: transparent;
+      color: #8e8e8e;
+      opacity: 0.6;
+      font-size: 12px;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.article-time {
+  padding: 0 16px;
+  font-size: 10px;
+  color: #8e8e8e;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.comment-input {
+  height: 56px;
+  border-top: 1px solid #efefef;
+  margin: 4px 0 0;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  input {
+    width: 90%;
+    &:focus {
+      outline: none;
+    }
+  }
+  .non-active {
+    background: transparent;
+    color: #0095f6;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    justify-content: flex-end;
+    opacity: 0.5;
+    &:focus {
+      outline: none;
+    }
+  }
+  .active {
+    background: transparent;
+    color: #0095f6;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    justify-content: flex-end;
+    opacity: 1;
+    &:focus {
+      outline: none;
+    }
+  }
+}
