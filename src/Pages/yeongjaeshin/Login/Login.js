@@ -6,8 +6,6 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "admin@example.com",
-      pw: "admin",
       userid: "",
       userpw: "",
       submit: false,
@@ -15,15 +13,37 @@ class Login extends React.Component {
     };
   }
 
+  autoLogin = () => {
+    if (localStorage.getItem("wtw-token")) {
+      this.props.history.push("/main-yeongjae");
+    }
+  };
+
   handleSubmit = (e) => {
     e.preventDefault();
-    const { id, pw, userid, userpw } = this.state;
-    userid.includes("@") && id === userid && pw === userpw
-      ? this.props.history.push("/main-yeongjae")
-      : this.setState({
-          submit: true,
-          validate: false,
-        });
+    const { userid, userpw } = this.state;
+    const savedToken = localStorage.getItem("wtw-token");
+    fetch("http://10.58.4.0:8000/user/in", {
+      method: "POST",
+      body: JSON.stringify({
+        email: userid,
+        password: userpw,
+      }),
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        localStorage.setItem("wtw-token", response.token);
+        if (response.token === savedToken) {
+          this.props.history.push("/main-yeongjae");
+          alert(`${response.email}님 환영합니다.`);
+        } else {
+          localStorage.removeItem("wtw-token");
+          this.setState({
+            submit: true,
+            validate: false,
+          });
+        }
+      });
   };
 
   handleUserInfo = (e) => {
@@ -32,6 +52,10 @@ class Login extends React.Component {
       [name]: value,
     });
   };
+
+  componentDidMount() {
+    this.autoLogin();
+  }
 
   render() {
     const { userid, userpw, submit, validate } = this.state;
@@ -62,7 +86,7 @@ class Login extends React.Component {
             />
             <button
               className={
-                userid.includes("@") && userpw.length >= 5
+                userid.includes("@") && userpw.length >= 1
                   ? "activate"
                   : "deactivate"
               }
