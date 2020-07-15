@@ -1,16 +1,16 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import LoginShin from "./Pages/yeongjaeshin/Login/Login";
-import MainShin from "./Pages/yeongjaeshin/Main/Main";
-import LoginKim from "./Pages/hyosikkim/Login/Login";
-import MainKim from "./Pages/hyosikkim/Main/Main";
-import LoginKwon from "./Pages/hansungkwon/Login/Login";
-import MainKwon from "./Pages/hansungkwon/Main/Main";
-import LoginLee from "./pages/byeongsoolee/Login/Login";
-import MainLee from "./pages/byeongsoolee/Main/Main";
-import LoginYoon from "./Pages/yoonjiyoung/Login/Login";
-import MainYoon from "./Pages/yoonjiyoung/Main/Main";
+import LoginShin from './Pages/yeongjaeshin/Login/Login';
+import MainShin from './Pages/yeongjaeshin/Main/Main';
+import LoginKim from './Pages/hyosikkim/Login/Login';
+import MainKim from './Pages/hyosikkim/Main/Main';
+import LoginKwon from './Pages/hansungkwon/Login/Login';
+import MainKwon from './Pages/hansungkwon/Main/Main';
+import LoginLee from './pages/byeongsoolee/Login/Login';
+import MainLee from './pages/byeongsoolee/Main/Main';
+import LoginYoon from './Pages/yoonjiyoung/Login/Login';
+import MainYoon from './Pages/yoonjiyoung/Main/Main';
 
 function Routes() {
   return (

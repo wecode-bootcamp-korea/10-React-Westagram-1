@@ -1,0 +1,27 @@
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  width: 935px;
+  margin: 0 auto;
+  padding-top: 100px;
+
+  .feeds-container {
+    width: 950px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.grey {
+  color: grey;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.ago {
+  font-size: 14px;
+  padding-left: 5px;
+}
