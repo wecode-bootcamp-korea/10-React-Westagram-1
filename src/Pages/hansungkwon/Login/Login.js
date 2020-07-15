@@ -5,8 +5,6 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      id: "admin@admin.com",
-      pw: "12345",
       userid: "",
       userpw: "",
       submit: false,
@@ -22,12 +20,17 @@ class Login extends Component {
 
   handleLogin = (e) => {
     e.preventDefault();
-    const { id, pw, userid, userpw } = this.state;
-
-    if (userid.includes("@") && id === userid && pw === userpw) {
+    fetch("http://10.58.4.0:8000/user/in", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.userid,
+        password: this.state.userpw,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => sessionStorage.setItem("access_token", res.token));
+    if (sessionStorage.getItem("access_token")) {
       this.props.history.push("/main");
-    } else {
-      this.setState({ submit: true, validate: false });
     }
   };
 

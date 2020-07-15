@@ -2,7 +2,20 @@ import React, { Component } from "react";
 import "./Side.scss";
 
 class Side extends Component {
+  constructor() {
+    super();
+    this.state = {
+      sideProfile: [
+        { username: "jang_che0l", userimg: "/images/hansungkwon/fol1.jpg" },
+        { username: "hoonb41", userimg: "/images/hansungkwon/fol2.jpg" },
+        { username: "jae__rry", userimg: "/images/hansungkwon/fol3.jpg" },
+        { username: "woonkyuko", userimg: "/images/hansungkwon/fol4.jpg" },
+        { username: "gml_jin7875", userimg: "/images/hansungkwon/fol5.jpg" },
+      ],
+    };
+  }
   render() {
+    const { sideProfile } = this.state;
     return (
       <div className="Side_Kwon">
         <div className="side">
@@ -20,66 +33,22 @@ class Side extends Component {
               <span>회원님을 위한 추천</span>
               <span className="recom-allbtn"> 모두 보기</span>
             </div>
-            <div className="recom-list">
-              <div className="recom-userimg">
-                <img alt="recom-userimg" src="/images/hansungkwon/fol1.jpg" />
-              </div>
-              <ul className="recom-userinfo">
-                <li className="recom-myid">jang_che0l</li>
-                <li className="recom-myname">회원님을 팔로우합니다</li>
-              </ul>
-              <div className="recom-follow">
-                <span>팔로우</span>
-              </div>
-            </div>
-            <div className="recom-list">
-              <div className="recom-userimg">
-                <img alt="recom-userimg" src="/images/hansungkwon/fol2.jpg" />
-              </div>
-              <ul className="recom-userinfo">
-                <li className="recom-myid">hoonb41</li>
-                <li className="recom-myname">회원님을 팔로우합니다</li>
-              </ul>
-              <div className="recom-follow">
-                <span>팔로우</span>
-              </div>
-            </div>
-            <div className="recom-list">
-              <div className="recom-userimg">
-                <img alt="recom-userimg" src="/images/hansungkwon/fol3.jpg" />
-              </div>
-              <ul className="recom-userinfo">
-                <li className="recom-myid">jae___rry</li>
-                <li className="recom-myname">회원님을 팔로우합니다</li>
-              </ul>
-              <div className="recom-follow">
-                <span>팔로우</span>
-              </div>
-            </div>
-            <div className="recom-list">
-              <div className="recom-userimg">
-                <img alt="recom-userimg" src="/images/hansungkwon/fol4.jpg" />
-              </div>
-              <ul className="recom-userinfo">
-                <li className="recom-myid">woonkyuko</li>
-                <li className="recom-myname">회원님을 팔로우합니다</li>
-              </ul>
-              <div className="recom-follow">
-                <span>팔로우</span>
-              </div>
-            </div>
-            <div className="recom-list">
-              <div className="recom-userimg">
-                <img alt="recom-userimg" src="/images/hansungkwon/fol5.jpg" />
-              </div>
-              <ul className="recom-userinfo">
-                <li className="recom-myid">gml_jin7875</li>
-                <li className="recom-myname">회원님을 팔로우합니다</li>
-              </ul>
-              <div className="recom-follow">
-                <span>팔로우</span>
-              </div>
-            </div>
+            {sideProfile.map((item, i) => {
+              return (
+                <div className="recom-list" key={i}>
+                  <div className="recom-userimg">
+                    <img alt="recom-userimg" src={item.userimg} />
+                  </div>
+                  <ul className="recom-userinfo">
+                    <li className="recom-myid">{item.username}</li>
+                    <li className="recom-myname">회원님을 팔로우합니다</li>
+                  </ul>
+                  <div className="recom-follow">
+                    <span>팔로우</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className="caption">
             <p className="cap-kr">
