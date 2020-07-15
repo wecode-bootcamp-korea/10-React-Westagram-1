@@ -15,12 +15,8 @@ class Comment extends React.Component {
   };
 
   handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      if (!this.state.comment) {
-        e.preventDefault();
-      } else {
-        this.handleComment();
-      }
+    if (e.key === "Enter" && this.state.comment.length > 0) {
+      return this.handleComment();
     }
   };
 
@@ -44,6 +40,7 @@ class Comment extends React.Component {
       comments: nextComments,
     });
   };
+
   render() {
     const { handleChange, handleComment, handleRemove, handleKeyPress } = this;
     const { comments } = this.state;
@@ -78,7 +75,7 @@ class Comment extends React.Component {
             onClick={
               !this.state.comment
                 ? (e) => {
-                    e.preventDefault();
+                    alert("댓글 입력 내용이 없습니다!");
                   }
                 : handleComment
             }

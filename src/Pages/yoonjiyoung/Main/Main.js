@@ -1,9 +1,8 @@
 import React from "react";
-
 import Nav from "./Components/Nav/Nav";
 import Feed from "./Components/Feeds/Feeds";
 import MainRight from "./Components/MainRight/MainRight";
-
+import MainStory from "./Components/Feeds/MainStory";
 import "./Main.scss";
 
 class Main extends React.Component {
@@ -13,7 +12,9 @@ class Main extends React.Component {
         <Nav />
         <main>
           <section>
-            <Feed />
+            <Feed>
+              <MainStory />
+            </Feed>
             <MainRight />
           </section>
         </main>

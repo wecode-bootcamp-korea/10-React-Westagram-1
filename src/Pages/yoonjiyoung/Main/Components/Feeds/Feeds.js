@@ -1,7 +1,7 @@
 import React from "react";
 import FeedComponent from "./FeedComponent";
 import MainStory from "./MainStory";
-
+import { randomData } from "../../../data";
 import "./Feeds.scss";
 
 class Feed extends React.Component {
@@ -16,9 +16,9 @@ class Feed extends React.Component {
           likeId="samuel__smalls"
           content="Beautiful shell glass box, $40 + shipping. DM email and zip
           code to purchase."
-          feedImg="/images/yoonjiyoung/profile16.jpg"
-          likeProfile="/images/yoonjiyoung/profile4.jpg"
-          userProfile="/images/yoonjiyoung/profile15.jpg"
+          feedImg={randomData[1].imageUrl}
+          likeProfile={randomData[2].imageUrl}
+          userProfile={randomData[3].imageUrl}
         />
         <FeedComponent
           userId="yojuyoon"
@@ -26,9 +26,9 @@ class Feed extends React.Component {
           location="London,UK"
           likeId="utrecht_nowidea"
           content="한국인의 버릇중에 하나가 자꾸 화이팅을 해요~ Hwaeeeeeting^^~"
-          feedImg="/images/yoonjiyoung/profile4.jpg"
-          likeProfile="/images/yoonjiyoung/profile10.jpg"
-          userProfile="/images/yoonjiyoung/profile13.jpg"
+          feedImg={randomData[3].imageUrl}
+          likeProfile={randomData[4].imageUrl}
+          userProfile={randomData[5].imageUrl}
         />
         <FeedComponent
           userId="regular.kr"
@@ -36,9 +36,9 @@ class Feed extends React.Component {
           location="Seoul,KR"
           likeId="bmq_._._._"
           content="Arnold Circus Stoolのミニサイズ版・Arnoldino Stool、新色Pistachioなど入荷しました。"
-          feedImg="/images/yoonjiyoung/profile14.jpg"
-          likeProfile="/images/yoonjiyoung/profile10.jpg"
-          userProfile="/images/yoonjiyoung/profile13.jpg"
+          feedImg={randomData[0].imageUrl}
+          likeProfile={randomData[5].imageUrl}
+          userProfile={randomData[3].imageUrl}
         />
       </div>
     );

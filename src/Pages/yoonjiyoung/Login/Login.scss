@@ -14,12 +14,15 @@
     align-items: center;
     flex-direction: column;
     border: 1px solid rgba(173, 173, 173, 0.5);
+
     .login__logo {
       margin-bottom: 40px;
     }
+
     .login__input {
       display: flex;
       flex-direction: column;
+
       input {
         width: 250px;
         height: 35px;
@@ -30,9 +33,11 @@
         text-indent: 10px;
         font-size: 12px;
       }
+
       .input__id {
         margin-bottom: 5px;
       }
+
       .login__btn {
         width: 250px;
         height: 35px;
@@ -45,12 +50,14 @@
         font-weight: 600;
       }
     }
+
     .login__forgetPw {
       margin-top: 55px;
       display: flex;
       align-items: center;
       flex-direction: column;
     }
+
     .login__forgetPw a {
       margin-top: 20px;
       font-size: 13px;
@@ -70,11 +77,13 @@
   font-size: 14px;
   font-weight: 600;
 }
+
 .wrongPw {
   color: red;
   font-size: 13px;
   visibility: visible;
 }
+
 .correctPw {
   color: red;
   font-size: 13px;

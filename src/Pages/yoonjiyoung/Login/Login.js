@@ -12,7 +12,7 @@ class Login extends React.Component {
       pw: "",
       userId: "yojuyoon@wecode.com",
       userPw: "wecode",
-      click: false,
+      isValidUserInfo: false,
     };
   }
 
@@ -21,22 +21,17 @@ class Login extends React.Component {
     if (userId.includes("@") && id === userId && pw === userPw) {
       this.props.history.push("/main");
     } else if (id !== userId && pw !== userPw) {
-      this.setState({ click: true });
+      this.setState({ isValidUserInfo: true });
     }
   };
 
-  handleChangeId = (e) => {
+  handleChange = (e) => {
     this.setState({
-      id: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
-  handleChangePw = (e) => {
-    this.setState({
-      pw: e.target.value,
-    });
-  };
-  handleKeyPress = (e) => {
+  handleKeyUp = (e) => {
     if (e.key === "Enter") {
       this.goToMain();
     }
@@ -45,24 +40,24 @@ class Login extends React.Component {
   render() {
     const { id, pw } = this.state;
     return (
-      <div className="Login_JY">
+      <div className="Login_JY" onKeyUp={this.handleKeyUp}>
         <div className="login__wrap">
           <div className="login__logo">
             <img alt="login__logo" src="/images/yoonjiyoung/logo_text.png" />
           </div>
           <div className="login__input">
             <input
-              onChange={this.handleChangeId}
-              onKeyUp={this.handleKeyPress}
+              onChange={this.handleChange}
               className="input__id"
               type="text"
+              name="id"
               placeholder="전화번호, 사용자 이름 또는 이메일"
             />
             <input
-              onChange={this.handleChangePw}
-              onKeyUp={this.handleKeyPress}
+              onChange={this.handleChange}
               className="input__pw"
               type="password"
+              name="pw"
               placeholder="비밀번호"
             />
             <button
@@ -77,7 +72,7 @@ class Login extends React.Component {
             </button>
           </div>
           <div className="login__forgetPw">
-            <p className={this.state.click ? "wrongPw" : "correctPw"}>
+            <p className={this.state.isValidUserInfo ? "wrongPw" : "correctPw"}>
               잘못된 비밀번호입니다. 다시 확인하세요.
             </p>
             <Link to="/pw">비밀번호를 잊으셨나요?</Link>
