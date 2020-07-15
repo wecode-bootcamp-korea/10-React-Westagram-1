@@ -9,7 +9,7 @@ class Login extends React.Component {
       id : "",
       password : "",
       ready : false,
-      myId : "qudtn12@",
+      myId : "djaxornwkd12@gmail.com",
       myPassword :"qudtn12",
       passwordError : false
     }
@@ -26,6 +26,7 @@ class Login extends React.Component {
       password : e.target.value,
       ready : e.target.value.length>5&&this.state.id.includes('@') ? true : false
     })
+    
   }
 
   goToMainPage = (e)=> {
@@ -38,7 +39,18 @@ class Login extends React.Component {
         passwordError : true 
       })
     }
+
+    fetch("http://10.58.0.223:8000/user/signin", {
+      method :"POST",
+      body : JSON.stringify({
+        email:this.state.id,
+        password: this.state.password
+      })
+    })
+    .then(res => res.json()) // JSON body -> JS
+    .then(res => sessionStorage.setItem("access_token", res.access_token))
   }
+
 
   render() {
     return (
