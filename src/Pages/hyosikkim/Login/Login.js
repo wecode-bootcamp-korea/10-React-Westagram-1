@@ -19,16 +19,22 @@ class Login extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-    console.log(e.target);
   };
 
   loginToMain = () => {
-    this.props.history.push('/main');
+    this.props.history.push('/main-hyosik');
   };
 
   checkIdPw = () => {
     const { id, pw, adminId, adminPw } = this.state;
-    console.log(id, pw);
+    fetch('', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+      }),
+    }).then((res) => res.json());
+
     if (id === adminId && pw === adminPw) {
       this.loginToMain();
     } else {
@@ -65,7 +71,6 @@ class Login extends React.Component {
             name="pw"
           />
           <button
-            // className={id.length * pw.length > 0 ? 'box login-changed' : 'box login'}
             className={id.includes('@') && pw.length >= 5 ? 'box login-changed' : 'box login'}
             onClick={this.checkIdPw}
           >

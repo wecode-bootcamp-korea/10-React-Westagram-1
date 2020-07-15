@@ -6,7 +6,7 @@ class Feeds extends React.Component {
   render() {
     return (
       <div className="Feeds_KHS">
-        {Array(11)
+        {Array(6)
           .fill()
           .map((_, i) => {
             return <Feed key={i} />;
