@@ -13,8 +13,9 @@ class Comment extends React.Component {
   index = 0;
 
   handleComment = (e) => {
+    const { value } = e.target;
     this.setState({
-      comment: e.target.value,
+      comment: value,
     });
   };
 
