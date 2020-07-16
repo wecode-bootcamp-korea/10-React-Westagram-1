@@ -14,6 +14,11 @@ class Feeds extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.getDatas();
+    this.getFeedImg();
+  }
+
   getDatas = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
@@ -34,11 +39,6 @@ class Feeds extends React.Component {
         });
       });
   };
-
-  componentDidMount() {
-    this.getDatas();
-    this.getFeedImg();
-  }
 
   render() {
     const { feedData, feedImg, isLoading } = this.state;

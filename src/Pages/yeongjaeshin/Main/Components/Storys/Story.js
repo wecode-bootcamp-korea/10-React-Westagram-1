@@ -9,6 +9,10 @@ class Story extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.getDatas();
+  }
+
   getDatas = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
@@ -18,10 +22,6 @@ class Story extends React.Component {
         })
       );
   };
-
-  componentDidMount() {
-    this.getDatas();
-  }
 
   render() {
     const { storyData } = this.state;

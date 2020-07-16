@@ -9,6 +9,10 @@ class Right extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.getDatas();
+  }
+
   getDatas = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
@@ -18,10 +22,6 @@ class Right extends React.Component {
         })
       );
   };
-
-  componentDidMount() {
-    this.getDatas();
-  }
 
   render() {
     const { recommendData } = this.state;

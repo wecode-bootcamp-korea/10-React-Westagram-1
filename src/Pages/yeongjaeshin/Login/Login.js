@@ -13,8 +13,13 @@ class Login extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.autoLogin();
+  }
+
   autoLogin = () => {
-    if (localStorage.getItem("wtw-token")) {
+    const hasToken = localStorage.getItem("wtw-token");
+    if (hasToken) {
       this.props.history.push("/main-yeongjae");
     }
   };
@@ -22,7 +27,6 @@ class Login extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { userid, userpw } = this.state;
-    const savedToken = localStorage.getItem("wtw-token");
     fetch("http://10.58.4.0:8000/user/in", {
       method: "POST",
       body: JSON.stringify({
@@ -33,11 +37,10 @@ class Login extends React.Component {
       .then((res) => res.json())
       .then((response) => {
         localStorage.setItem("wtw-token", response.token);
-        if (response.token === savedToken) {
+        if (response.token) {
           this.props.history.push("/main-yeongjae");
           alert(`${response.email}님 환영합니다.`);
         } else {
-          localStorage.removeItem("wtw-token");
           this.setState({
             submit: true,
             validate: false,
@@ -52,10 +55,6 @@ class Login extends React.Component {
       [name]: value,
     });
   };
-
-  componentDidMount() {
-    this.autoLogin();
-  }
 
   render() {
     const { userid, userpw, submit, validate } = this.state;
