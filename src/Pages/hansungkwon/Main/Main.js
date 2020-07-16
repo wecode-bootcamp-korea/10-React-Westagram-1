@@ -13,7 +13,7 @@ class Main extends Component {
         <main className="feeds-container">
           <article className="arc-container">
             <Story />
-            {Array(5)
+            {Array(3)
               .fill()
               .map((_, i) => {
                 return <Feeds key={i} />;
