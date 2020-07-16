@@ -1,0 +1,215 @@
+.main__top-story {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  overflow: hidden;
+  overflow-x: scroll;
+  border: 1px solid rgba(173, 173, 173, 0.5);
+  border-radius: 3px;
+  margin-bottom: 23px;
+
+  .story__column {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+
+    .story__user,
+    .story__title {
+      margin-left: 10px;
+
+      .story__id {
+        font-size: 12px;
+      }
+    }
+
+    .story__profile-border {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background-image: linear-gradient(to bottom, #a51675, #fc9139);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .story__profile-photo {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+    }
+  }
+}
+
+.main__feed {
+  width: 600px;
+  margin-bottom: 80px;
+  background-color: white;
+  border: 1px solid rgba(173, 173, 173, 0.5);
+  border-radius: 3px;
+
+  .user__profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    .user__profile-top {
+      display: flex;
+
+      .user__id {
+        margin-left: 10px;
+        font-size: 16px;
+
+        .user__location {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+
+  .like__profile {
+    display: flex;
+    align-items: center;
+
+    .like-profile__photo {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+    }
+  }
+
+  .profile__info {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+  }
+
+  .feed__photo {
+    overflow: hidden;
+    text-align: center;
+
+    .photo__post {
+      width: 100%;
+    }
+  }
+
+  .feed__interactive {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 0 14px;
+
+    .feed__icon,
+    .feed__icon-heart {
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+      opacity: 0.8;
+    }
+  }
+
+  .feed__like {
+    display: flex;
+    align-items: center;
+    margin: 8px 0 0 14px;
+
+    .like__people {
+      margin-left: 12px;
+      font-size: 14px;
+      .like-id,
+      .like-num {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .feed__statusTxt {
+    margin: 10px 0 0 19px;
+    line-height: 1.2em;
+    display: flex;
+    align-items: center;
+
+    .statusTxt {
+      width: 200px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .statusTxt__more {
+      cursor: pointer;
+      font-size: 14px;
+      background-color: white;
+      border: none;
+      color: rgb(173, 173, 173);
+    }
+  }
+
+  .time__text {
+    margin: 0 0 10px 19px;
+    color: rgb(173, 173, 173);
+    font-size: 14px;
+  }
+
+  .feed__comment {
+    display: flex;
+    justify-content: space-between;
+
+    .comment__text {
+      width: 100%;
+      height: 58px;
+      border: none;
+      border-top: 1px solid rgba(173, 173, 173, 0.3);
+      text-indent: 12px;
+      outline: none;
+    }
+
+    .comment__post-btn {
+      width: 50px;
+      background-color: white;
+      border: none;
+      border-top: 1px solid rgba(173, 173, 173, 0.3);
+      color: rgba(0, 149, 246, 0.7);
+      outline: none;
+    }
+
+    .comment__post-btn-clicked {
+      width: 50px;
+      background-color: white;
+      border: none;
+      border-top: 1px solid rgba(173, 173, 173, 0.3);
+      color: rgb(0, 149, 246);
+      outline: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  .js-feedCommentList {
+    position: relative;
+    margin: 5px 0px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .feedCommentList {
+      margin: 2px 0px;
+      font-size: 14px;
+    }
+
+    .delBtn {
+      position: absolute;
+      right: 15px;
+      font-size: 12px;
+      color: rgba(173, 173, 173, 0.8);
+      background-color: white;
+      border: none;
+    }
+  }
+}

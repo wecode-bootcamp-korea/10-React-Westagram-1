@@ -1,0 +1,84 @@
+.comment {
+  margin: 3px 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 14px;
+  list-style: none;
+}
+
+main {
+  position: relative;
+  top: 54px;
+  padding-top: 30px;
+}
+
+.user__profile-photo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(173, 173, 173, 0.5);
+}
+
+.user__name {
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 700px) {
+  .nav__search-input {
+    width: 150px !important;
+  }
+
+  .nav__content {
+    width: 500px;
+  }
+
+  .nav__search-icon {
+    display: none;
+  }
+
+  .nav-side__icon {
+    width: 18px;
+    height: 18px;
+    margin-left: 8px;
+  }
+
+  .main__top-story {
+    width: 500px;
+  }
+
+  .main__feeds-wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .main__feed {
+    width: 500px;
+  }
+
+  .Main__right_JY {
+    display: none;
+  }
+
+  .delBtn {
+    margin-left: 453px;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.move {
+  left: 10px;
+  text-align: left;
+  position: absolute;
+}
