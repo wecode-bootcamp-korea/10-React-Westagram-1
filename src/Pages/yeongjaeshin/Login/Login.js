@@ -6,8 +6,6 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "admin@example.com",
-      pw: "admin",
       userid: "",
       userpw: "",
       submit: false,
@@ -15,30 +13,49 @@ class Login extends React.Component {
     };
   }
 
-  handleLogin = (e) => {
-    e.preventDefault();
-    const { id, pw, userid, userpw } = this.state;
-    if (userid.includes("@") && id === userid && pw === userpw) {
-      this.props.history.push("/main");
-    } else {
-      this.setState({
-        submit: true,
-        validate: false,
-      });
+  autoLogin = () => {
+    if (localStorage.getItem("wtw-token")) {
+      this.props.history.push("/main-yeongjae");
     }
   };
 
-  handleIdInput = (e) => {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { userid, userpw } = this.state;
+    const savedToken = localStorage.getItem("wtw-token");
+    fetch("http://10.58.4.0:8000/user/in", {
+      method: "POST",
+      body: JSON.stringify({
+        email: userid,
+        password: userpw,
+      }),
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        localStorage.setItem("wtw-token", response.token);
+        if (response.token === savedToken) {
+          this.props.history.push("/main-yeongjae");
+          alert(`${response.email}님 환영합니다.`);
+        } else {
+          localStorage.removeItem("wtw-token");
+          this.setState({
+            submit: true,
+            validate: false,
+          });
+        }
+      });
+  };
+
+  handleUserInfo = (e) => {
+    const { name, value } = e.target;
     this.setState({
-      userid: e.target.value,
+      [name]: value,
     });
   };
 
-  handlePwInput = (e) => {
-    this.setState({
-      userpw: e.target.value,
-    });
-  };
+  componentDidMount() {
+    this.autoLogin();
+  }
 
   render() {
     const { userid, userpw, submit, validate } = this.state;
@@ -50,22 +67,26 @@ class Login extends React.Component {
             className="logo"
             src="/images/yeongjaeshin/logo_text.png"
           />
-          <form className="input-user-info" onSubmit={this.handleLogin}>
+          <form className="input-user-info" onSubmit={this.handleSubmit}>
             <input
               className="userinfo"
               type="text"
+              value={userid}
+              name="userid"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={this.handleIdInput}
+              onChange={this.handleUserInfo}
             />
             <input
               className="userinfo"
               type="password"
+              value={userpw}
+              name="userpw"
               placeholder="비밀번호"
-              onChange={this.handlePwInput}
+              onChange={this.handleUserInfo}
             />
             <button
               className={
-                userid.includes("@") && userpw.length >= 5
+                userid.includes("@") && userpw.length >= 1
                   ? "activate"
                   : "deactivate"
               }
