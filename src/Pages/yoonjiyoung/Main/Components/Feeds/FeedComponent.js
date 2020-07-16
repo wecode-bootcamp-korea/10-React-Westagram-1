@@ -3,6 +3,14 @@ import Comment from "./Comment";
 
 class FeedComponent extends React.Component {
   render() {
+    const {
+      feedImg,
+      userId,
+      content,
+      likeProfile,
+      likeId,
+      timeAgo,
+    } = this.props;
     return (
       <article className="main__feed">
         <div className="feed__user">
@@ -29,11 +37,7 @@ class FeedComponent extends React.Component {
           </div>
         </div>
         <div className="feed__photo">
-          <img
-            alt="photo__post"
-            className="photo__post"
-            src={this.props.feedImg}
-          />
+          <img alt="photo__post" className="photo__post" src={feedImg} />
         </div>
         <div className="feed__interactive">
           <div className="interactive__icon">
@@ -70,20 +74,20 @@ class FeedComponent extends React.Component {
             <img
               alt="like-profile__photo"
               className="like-profile__photo"
-              src={this.props.likeProfile}
+              src={likeProfile}
             />
           </div>
           <span className="like__people">
-            <span className="like-id">{this.props.likeId}</span>님 외
+            <span className="like-id">{likeId}</span>님 외
             <span className="like-num">154명</span>이 좋아합니다
           </span>
         </div>
         <div className="feed__statusTxt">
-          <div className="user__name">{this.props.userId}</div>
-          <p className="statusTxt">{this.props.content}</p>
+          <div className="user__name">{userId}</div>
+          <p className="statusTxt">{content}</p>
           <button className="statusTxt__more">더보기</button>
         </div>
-        <span className="time__text">{this.props.timeAgo}</span>
+        <span className="time__text">{timeAgo}</span>
         <Comment />
       </article>
     );

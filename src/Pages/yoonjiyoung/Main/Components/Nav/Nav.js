@@ -1,5 +1,6 @@
 import React from "react";
 import "./Nav.scss";
+import "../../Main.scss";
 
 class Nav extends React.Component {
   render() {

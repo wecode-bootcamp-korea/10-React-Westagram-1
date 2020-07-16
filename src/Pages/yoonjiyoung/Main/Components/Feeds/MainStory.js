@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Story from "./Story";
 import { randomData } from "../../../data";
+import Story from "./Story";
 
 class MainStory extends React.Component {
   constructor() {
@@ -21,17 +21,18 @@ class MainStory extends React.Component {
   };
 
   render() {
+    const { hideModal, showModal } = this;
+    const { modalStatus, story } = this.state;
     return (
       <div className="main__top-story">
-        {this.state.modalStatus && <Story hideModal={this.hideModal} />}
-        {this.state.story.map((column, index) => {
-          console.log(column, "column");
+        {modalStatus && <Story hideModal={hideModal} />}
+        {story.map((column, index) => {
           return (
             <div className="story__column" key={column.id}>
               <div className="story__user">
                 <div className="story__profile-border">
                   <img
-                    onClick={this.showModal}
+                    onClick={showModal}
                     alt="story__profile"
                     className="story__profile-photo"
                     src={column.imageUrl}
@@ -39,7 +40,7 @@ class MainStory extends React.Component {
                 </div>
               </div>
               <div className="story__title">
-                <span className="story__id">{this.state.story[index].id}</span>
+                <span className="story__id">{story[index].id}</span>
                 <br />
               </div>
             </div>

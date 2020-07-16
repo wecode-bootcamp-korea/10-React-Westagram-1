@@ -33,7 +33,7 @@ section {
 
 @media screen and (max-width: 700px) {
   .nav__search-input {
-    width: 150px;
+    width: 150px !important;
   }
 
   .nav__content {
@@ -64,7 +64,7 @@ section {
     width: 500px;
   }
 
-  .main__right {
+  .Main__right_JY {
     display: none;
   }
 

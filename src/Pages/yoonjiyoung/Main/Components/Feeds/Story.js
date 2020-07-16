@@ -4,8 +4,9 @@ import "./Story.scss";
 
 class Story extends React.Component {
   render() {
+    const { hideModal } = this.props;
     return (
-      <div className="story__container" onClick={this.props.hideModal}>
+      <div className="story__container" onClick={hideModal}>
         <div className="story__content-container">
           <div className="story__top">
             <div className="story__profile">
@@ -27,8 +28,10 @@ class Story extends React.Component {
               <i class="fas fa-ellipsis-h"></i>
             </div>
           </div>
-          <div className="story__bar"></div>
-          <div className="story__bar-flow"></div>
+          <div className="story_bar-container">
+            <div className="story__bar"></div>
+            <div className="story__bar-flow"></div>
+          </div>
           <div className="story__content">
             <div className="story__image">
               <img

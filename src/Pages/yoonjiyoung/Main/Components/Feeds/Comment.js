@@ -9,22 +9,25 @@ class Comment extends React.Component {
   num = 0;
 
   handleChange = (e) => {
+    const { value } = e.target;
     this.setState({
-      comment: e.target.value,
+      comment: value,
     });
   };
 
   handleKeyPress = (e) => {
-    if (e.key === "Enter" && this.state.comment.length > 0) {
+    const { comment } = this.state;
+    if (e.key === "Enter" && comment.length > 0) {
       return this.handleComment();
     }
   };
 
   handleComment = () => {
+    const { comment, comments } = this.state;
     this.setState({
-      comments: this.state.comments.concat({
+      comments: comments.concat({
         num: this.num,
-        comment: this.state.comment,
+        comment: comment,
       }),
       comment: "",
     });
@@ -43,7 +46,7 @@ class Comment extends React.Component {
 
   render() {
     const { handleChange, handleComment, handleRemove, handleKeyPress } = this;
-    const { comments } = this.state;
+    const { comment, comments, btn } = this.state;
     return (
       <>
         <ul className="js-feedCommentList">
@@ -64,7 +67,7 @@ class Comment extends React.Component {
         </ul>
         <div className="feed__comment">
           <input
-            value={this.state.comment}
+            value={comment}
             onChange={handleChange}
             onKeyUp={handleKeyPress}
             type="text"
@@ -73,19 +76,19 @@ class Comment extends React.Component {
           />
           <button
             onClick={
-              !this.state.comment
+              !comment
                 ? (e) => {
                     alert("댓글 입력 내용이 없습니다!");
                   }
                 : handleComment
             }
             className={
-              this.state.comment.length > 1
+              comment.length > 1
                 ? "comment__post-btn-clicked"
                 : "comment__post-btn"
             }
           >
-            {this.state.btn}
+            {btn}
           </button>
         </div>
       </>
