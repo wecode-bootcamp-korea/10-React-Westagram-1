@@ -1,0 +1,67 @@
+.Nav_BS{
+    width: 100%;
+    height: 54px;
+    border-bottom: 1px solid var(--grey-light-color);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white-color);
+
+    .container {
+        width: 975px;
+        height : 100%;
+        display : flex;
+        justify-content: space-between;
+        align-items: center;
+        margin : 0 auto;
+        padding : 0 20px;
+
+        .logo{
+            :nth-child(1) {
+                width : 32px;
+                margin-right: 12px;
+            } 
+    
+            :nth-child(2) {
+                width : 115px;
+                border-left : 2px solid var(--grey-dark-color);
+                padding-left: 10px;
+            }         
+        }
+        
+        .find {
+            width: 215px;
+            height: 28px;
+            background-color: var(--grey-medium-color);
+            border: 1.3px solid var(--grey-light-color);
+            border-radius: 3px;
+            padding : 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            img {
+                width: 9px;
+                padding-top: 3px;
+                color : var(--grey-dark-color);
+            }
+    
+            span {
+                color : var(--grey-dark-color);
+                font-size: var(--font-medium);
+                margin-left: 6px;
+            }
+        }
+     
+        .menu {
+            width: 150px;
+            display: flex;
+            justify-content: space-between;
+        
+            img {
+                width: 22px;
+                margin-left: 22px;
+            }
+        }    
+    } 
+}
