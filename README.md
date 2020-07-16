@@ -1,51 +1,43 @@
-# 10-React-Westagram-1
+# WeCode 인스타그램 클론코딩 프로젝트 (Front-End)
 
-### (엄격, 근엄, 진지)
+## 프로젝트 소개🙌
 
-**master 브랜치는 신성불가침의 영역입니다**
+- 전 세계 최다 사용자를 보유하고 있는 SNS인 인스타그램 클론 코딩
 
-## 팀원
+## 개발 기간📆
 
-- 10기 신영재
-- 10기 김효식
-- 10기 권한성
-- 10기 이병수
-- 10기 윤지영
+- 2020년 7월 6일 ~ 2020년 7월 16일(2주)
 
-## 작업현황
+## 팀원🐙
 
-### 10기 신영재
+- [10기 신영재](https://github.com/Yeongjae-Shin)
+- [10기 김효식](https://github.com/h-sick)
+- [10기 권한성](https://github.com/ivory-code)
+- [10기 이병수](https://velog.io/@djaxornwkd12)
+- [10기 윤지영](https://velog.io/@yoju)
 
-- [x] 자신의 폴더 만들기
-- [x] Sass Nesting
-- [x] 댓글 추가 및 삭제 기능
+## 개발 목적🧾📈
 
-### 10기 김효식
+- Vanilia JS로만 구현한 인스타그램 클로닝 페이지가 구조가 복잡해짐에 따라 React로 재구성할 필요성을 느낌
 
-- [x] 자신의 폴더 만들기
-- [x] Sass Nesting
+## 기술 스택 및 구현 기능🛠
 
-### 10기 권한성
+### 기술 스택
 
-- [x] 자신의 폴더 만들기
-- [x] Sass Nesting
+- React.js
+- React Router
+- RESTful API
+- Sass
 
-### 10기 이병수
+### 구현 기능
 
-- [x] 자신의 폴더 만들기
-- [x] Sass Nesting
+- 로그인
+- 댓글 추가/삭제
+- React Router를 이용한 페이지 이동 기능 구현
+- `fetch API`를 통해 백엔드와 로그인 통신 구현
 
-### 10기 윤지영
+## 정리
 
-- [x] 자신의 폴더 만들기
-- [x] Sass Nesting
-
-## 작업순서
-
-1. `git branch feature/jun` <- 항상 작업하기 전에 자신의 브랜치에서!
-2. `git pull origin master` 명령어로 최신 코드를 받아온다
-3. 코드를 작업한다. 최대한 기능별로 쪼개서 작업하기
-4. 프로젝트 상위 디렉토리로 가서 `git add .` 명령어로 내가 수정한 코드를 git stage 에 올린다
-5. `git status` add가 잘 되었는지 확인하기
-6. `git commit -m "commit message"` <- commit message는 팀원과 상의한 후에 slack 에 공유한다.
-7. `git push origin feature/jun` <- 본인 브랜치에서 작업한 내용을 원격 리포지토리에 올리기!
+- 2주라는 짧은 시간 동안 React를 사용해보며 JSX문법, React 라이브러리, Lifecycle 등을 적용해보며 React의 flow를 이해
+- React를 다루는데 꼭 필요한 객체(Object)의 정의와 속성 접근 및 조작방법에 대해 복습
+- HTTP 통신의 요청과 응답의 개념을 배우고, 백엔드와 소통해보며 **협업**의 중요성에 대해서 배움
