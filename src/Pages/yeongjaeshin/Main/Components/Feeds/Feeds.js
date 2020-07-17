@@ -5,43 +5,8 @@ import LoaderImg from "./Loader";
 import "./Feeds.scss";
 
 class Feeds extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      feedData: [],
-      feedImg: [],
-      isLoading: true,
-    };
-  }
-
-  componentDidMount() {
-    this.getDatas();
-    this.getFeedImg();
-  }
-
-  getDatas = () => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((result) => {
-        this.setState({
-          feedData: result,
-        });
-      });
-  };
-
-  getFeedImg = () => {
-    fetch("https://yts.mx/api/v2/list_movies.json?sort_by=like_count")
-      .then((response) => response.json())
-      .then((result) => {
-        this.setState({
-          feedImg: result.data.movies,
-          isLoading: false,
-        });
-      });
-  };
-
   render() {
-    const { feedData, feedImg, isLoading } = this.state;
+    const { feedData, feedImg, isLoading } = this.props;
     return (
       <article className="Feeds_YJ">
         {feedData.map((item, i) => {

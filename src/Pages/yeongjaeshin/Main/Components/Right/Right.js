@@ -2,29 +2,8 @@ import React from "react";
 import "./Right.scss";
 
 class Right extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      recommendData: [],
-    };
-  }
-
-  componentDidMount() {
-    this.getDatas();
-  }
-
-  getDatas = () => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((result) =>
-        this.setState({
-          recommendData: result,
-        })
-      );
-  };
-
   render() {
-    const { recommendData } = this.state;
+    const { recommendData } = this.props;
     return (
       <div className="right-fix">
         <div className="main-feed-right">

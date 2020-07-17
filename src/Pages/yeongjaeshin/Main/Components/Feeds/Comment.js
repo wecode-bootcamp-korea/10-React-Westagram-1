@@ -45,6 +45,7 @@ class Comment extends React.Component {
 
   render() {
     const { id, comment, comments } = this.state;
+    const { deleteComment, addComment, handleComment } = this;
     return (
       <>
         <div className="comment">
@@ -54,7 +55,7 @@ class Comment extends React.Component {
                 <li>
                   <span>{id}</span>
                   <p>{item.comment}</p>
-                  <button onClick={() => this.deleteComment(item.index)}>
+                  <button onClick={() => deleteComment(item.index)}>
                     삭제
                   </button>
                 </li>
@@ -70,7 +71,7 @@ class Comment extends React.Component {
               ? (e) => {
                   e.preventDefault();
                 }
-              : this.addComment
+              : addComment
           }
         >
           <input
@@ -78,7 +79,7 @@ class Comment extends React.Component {
             placeholder="댓글 달기..."
             className="input"
             value={comment}
-            onChange={this.handleComment}
+            onChange={handleComment}
           />
           <button className={comment.length >= 1 ? "active" : "non-active"}>
             게시

@@ -8,8 +8,8 @@ class Login extends React.Component {
     this.state = {
       userid: "",
       userpw: "",
-      submit: false,
-      validate: false,
+      isSubmit: false,
+      isValidate: false,
     };
   }
 
@@ -42,8 +42,8 @@ class Login extends React.Component {
           alert(`${response.email}님 환영합니다.`);
         } else {
           this.setState({
-            submit: true,
-            validate: false,
+            isSubmit: true,
+            isValidate: false,
           });
         }
       });
@@ -57,7 +57,8 @@ class Login extends React.Component {
   };
 
   render() {
-    const { userid, userpw, submit, validate } = this.state;
+    const { userid, userpw, isSubmit, isValidate } = this.state;
+    const { handleSubmit, handleUserInfo } = this;
     return (
       <div className="Login_YJ">
         <div className="login-page">
@@ -66,14 +67,14 @@ class Login extends React.Component {
             className="logo"
             src="/images/yeongjaeshin/logo_text.png"
           />
-          <form className="input-user-info" onSubmit={this.handleSubmit}>
+          <form className="input-user-info" onSubmit={handleSubmit}>
             <input
               className="userinfo"
               type="text"
               value={userid}
               name="userid"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={this.handleUserInfo}
+              onChange={handleUserInfo}
             />
             <input
               className="userinfo"
@@ -81,7 +82,7 @@ class Login extends React.Component {
               value={userpw}
               name="userpw"
               placeholder="비밀번호"
-              onChange={this.handleUserInfo}
+              onChange={handleUserInfo}
             />
             <button
               className={
@@ -96,7 +97,9 @@ class Login extends React.Component {
           </form>
           <div className="forgetpw">
             <p
-              className={submit ? (validate ? "correct" : "wrong") : "correct"}
+              className={
+                isSubmit ? (isValidate ? "correct" : "wrong") : "correct"
+              }
             >
               잘못된 비밀번호입니다. 다시 확인하세요.
             </p>

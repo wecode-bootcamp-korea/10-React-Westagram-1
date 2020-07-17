@@ -2,29 +2,8 @@ import React from "react";
 import "./Story.scss";
 
 class Story extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      storyData: [],
-    };
-  }
-
-  componentDidMount() {
-    this.getDatas();
-  }
-
-  getDatas = () => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((result) =>
-        this.setState({
-          storyData: result,
-        })
-      );
-  };
-
   render() {
-    const { storyData } = this.state;
+    const { storyData } = this.props;
     return (
       <>
         <div className="feed-story">
